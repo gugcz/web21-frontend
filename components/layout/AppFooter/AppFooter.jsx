@@ -10,7 +10,5 @@ const useStyles = makeStyles(() => ({
 export const AppFooter = () => {
   const classes = useStyles();
 
-  return (
-    <Typography className={classes.root}>Footer</Typography>
-  )
-}
+  return <Typography className={classes.root}>Footer</Typography>;
+};

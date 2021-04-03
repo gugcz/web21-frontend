@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../src/theme';
 import { Container, makeStyles } from '@material-ui/core';
+import theme from '../src/theme';
 import { AppHeader } from '../components/layout/AppHeader/AppHeader';
 import { AppFooter } from '../components/layout/AppFooter/AppFooter';
 
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
         </Container>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

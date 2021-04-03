@@ -1,0 +1,20 @@
+# See https://prettier.io/docs/en/ignore.html#ignoring-files for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# files
+reportWebVitals.js
+
+**/dist/*
+package.json
+/.next
+/out

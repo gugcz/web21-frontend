@@ -14,8 +14,8 @@ export const AppHeader = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Logo/>
+        <Logo />
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};

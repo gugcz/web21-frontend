@@ -1,0 +1,5 @@
+reportWebVitals.js
+dist/
+build/
+node_modules/
+out/

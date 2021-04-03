@@ -1,5 +1,4 @@
 import { Box, Link, makeStyles } from '@material-ui/core';
-import Logo from '../components/common/Logo/Logo';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -23,5 +22,5 @@ export default function Home() {
         Go to the about page
       </Link>
     </Box>
-  )
+  );
 }
