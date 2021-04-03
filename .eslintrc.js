@@ -21,4 +21,9 @@ module.exports = {
   globals: {
     React: 'writable',
   },
+  settings: {
+    react: {
+      version: '17.0.2',
+    },
+  },
 };
