@@ -3,8 +3,19 @@ import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
+import { Container, makeStyles } from '@material-ui/core';
+import { AppHeader } from '../components/layout/AppHeader/AppHeader';
+import { AppFooter } from '../components/layout/AppFooter/AppFooter';
+
+const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: 'red',
+    overflow: 'auto',
+  },
+}));
 
 function MyApp({ Component, pageProps }) {
+  const classes = useStyles();
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -23,7 +34,11 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <Container className={classes.root} maxWidth={'lg'} disableGutters>
+          <AppHeader />
+          <Component {...pageProps} />
+          <AppFooter />
+        </Container>
       </ThemeProvider>
     </>
   )
