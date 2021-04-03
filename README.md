@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GugWeb
+
+## Technology
+
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Material-UI
+- Material UI CSS in JS - JSS
+- Project is using Prettier and ES-lint
+- Use node 14.15.5 or compatible
 
 ## Getting Started
 
-First, run the development server:
+Install by running:
 
 ```bash
-npm run dev
+yarn install
 # or
+yarn
+```
+
+then, run the development server:
+
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Development
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Each page has its own file
+- Use material-UI components as much as possible
+- Use components as much as possible. Put them in `/components` directory
+- Keep root layout in `app.js`
+- JSS is compatible with SASS (Visual Studio has some nice plugins for it)
+- Material-ui has a theme. Use it as much as possible
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Git
+
+- There is eslint and prettier before commit
+- There is strict check before push (no errors, no warnings are allowed)
+- use `yarn lint-prod` to see all errors and use `yarn format` to reformat and fix code
+- use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) if possible
+
+## Deploy
+
+To get static web run:
+
+```bash
+yarn export
+```
+
+Deploy somewhere - TBD
 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
+- [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) - commit messages unification framework
+- [Materil-UI](https://material-ui.com/) - react components, theme, layout, ...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Troubleshooting
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+0 days since last trouble
