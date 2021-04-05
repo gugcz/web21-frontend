@@ -5,6 +5,7 @@ import { JoinUsHeaderButton } from '../JoinUsHeader/JoinUsHeaderButton';
 
 const useStyles = makeStyles(({ spacing }) => ({
   menu: {
+    flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
     '& >*': {
