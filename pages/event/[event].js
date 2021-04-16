@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import { useRouter } from 'next/router';
 import { Typography } from '@material-ui/core';
 
-export default function About() {
+export default function Event() {
   const router = useRouter();
   const { event } = router.query;
 
