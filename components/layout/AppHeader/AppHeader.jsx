@@ -2,7 +2,7 @@ import { AppBar, Box, Hidden, IconButton, makeStyles, Toolbar, Typography } from
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../../common/Logo/Logo';
-import { JoinUsHeaderButton } from '../JoinUsHeader/JoinUsHeaderButton';
+import { JoinUsHeaderButton } from '../JoinUsHeaderButton/JoinUsHeaderButton';
 
 const useStyles = makeStyles(({ spacing }) => ({
   menu: {

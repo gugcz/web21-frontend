@@ -1,4 +1,4 @@
-import { Box, Link, makeStyles } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -17,10 +17,15 @@ export default function Home() {
 
   return (
     <Box m={4}>
-      <p>Tohle je obyčejné html</p>
-      <Link href="/about" color="secondary" className={classes.root}>
-        Go to the about page
-      </Link>
+      <Box>headlineIntro</Box>
+      <Box>scorecards</Box>
+      <Box>events</Box>
+      <Box>connection</Box>
+      <Box>písmenka</Box>
+      <Box>Další písmenka</Box>
+      <Box>Komunita</Box>
+      <Box>Newsletter</Box>
+      <Box>Partneři</Box>
     </Box>
   );
 }
