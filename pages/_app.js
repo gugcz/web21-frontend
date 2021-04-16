@@ -9,7 +9,6 @@ import { AppFooter } from '../components/layout/AppFooter/AppFooter';
 
 const useStyles = makeStyles(() => ({
   root: {
-    backgroundColor: 'red',
     overflow: 'auto',
   },
 }));
