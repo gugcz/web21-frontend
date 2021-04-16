@@ -13,6 +13,7 @@ export default function Logo() {
       <a>
         <img src="/gugLogo.png" alt="GUG Logo" className={classes.root} />
       </a>
+      Test
     </Link>
   );
 }
