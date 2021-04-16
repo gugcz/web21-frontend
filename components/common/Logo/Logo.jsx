@@ -11,7 +11,7 @@ export default function Logo() {
   return (
     <Link href="/about">
       <a>
-        <img src="/gugLogo.png" alt="GUG Logo" className={classes.root} />
+        <img src="/images/gugLogo.png" alt="GUG Logo" className={classes.root} />
       </a>
     </Link>
   );
