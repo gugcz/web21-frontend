@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { forwardRef } from 'react';
 import Link from 'next/link';
 import { Link as MuiLink } from '@material-ui/core';
