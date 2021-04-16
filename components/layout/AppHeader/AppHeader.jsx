@@ -1,8 +1,9 @@
-import { AppBar, Box, Hidden, IconButton, makeStyles, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Box, Hidden, IconButton, makeStyles, Toolbar } from '@material-ui/core';
 import React from 'react';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../../common/Logo/Logo';
-import { JoinUsHeaderButton } from '../JoinUsHeader/JoinUsHeaderButton';
+import { JoinUsHeaderButton } from '../JoinUsHeaderButton/JoinUsHeaderButton';
+import NextLink from '../../common/NextLink/NextLink';
 
 const useStyles = makeStyles(({ spacing }) => ({
   menu: {
@@ -28,10 +29,15 @@ export const AppHeader = () => {
         <Logo />
         <Hidden smDown>
           <Box m={1} className={classes.menu}>
-            <Typography>Menu 1</Typography>
-            <Typography>Menu 2</Typography>
-            <Typography>Menu 3</Typography>
-            <Typography>Menu 4</Typography>
+            <NextLink href="/events">Eventy</NextLink>
+            <NextLink href="/about">O nás</NextLink>
+            <NextLink
+              href={{
+                pathname: '/event/[event]',
+                query: { event: 'template' },
+              }}>
+              Event template
+            </NextLink>
           </Box>
           <JoinUsHeaderButton />
         </Hidden>
