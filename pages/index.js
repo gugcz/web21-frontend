@@ -1,4 +1,5 @@
 import { Box, makeStyles } from '@material-ui/core';
+import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -17,7 +18,7 @@ export default function Home() {
       <Box>Další písmenka</Box>
       <Box>Komunita</Box>
       <Box>Newsletter</Box>
-      <Box>Partneři</Box>
+      <PartnersSection />
     </Box>
   );
 }

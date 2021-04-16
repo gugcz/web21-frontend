@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 
 export default function About() {
   return (
@@ -15,7 +16,7 @@ export default function About() {
         <Box>scorecardy</Box>
         <Box>Title with text and picture and action - LEFT</Box>
       </Box>
-      <Box>Partneři</Box>
+      <PartnersSection />
     </Box>
   );
 }
