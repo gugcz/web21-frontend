@@ -1,7 +1,19 @@
 module.exports = {
   parser: 'babel-eslint',
-  plugins: ['react-hooks', 'react', 'import', 'prettier'],
-  extends: ['prettier', 'plugin:react/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:prettier/recommended',
+    'plugin:react/recommended', // Specify rules for React
+    'plugin:react-hooks/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
   rules: {
     'import/newline-after-import': 'warn',
     'import/no-unresolved': 0,
@@ -23,7 +35,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: '17.0.2',
+      version: 'detect',
     },
   },
 };
