@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-export default function Logo() {
+const Logo = () => {
   const classes = useStyles();
 
   return (
@@ -15,4 +15,8 @@ export default function Logo() {
       </a>
     </Link>
   );
-}
+};
+
+Logo.propTypes = {};
+
+export default Logo;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import { EventBox } from '../components/events/EventBox/EventBox';
+import EventBox from '../components/events/EventBox/EventBox';
 
 export default function Events() {
   return (

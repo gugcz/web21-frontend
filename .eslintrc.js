@@ -2,7 +2,7 @@ module.exports = {
   parser: 'babel-eslint',
   extends: [
     'plugin:prettier/recommended',
-    'plugin:react/recommended', // Specify rules for React
+    'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -19,7 +19,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/named': 'warn',
     'import/order': ['warn'],
-    'react/prop-types': 'off',
+    'react/prop-types': process.env.NODE_ENV === 'production' ? 'off' : 'warn', // for now, it should not prevent from building the app
     'react/sort-prop-types': 'off',
     'react/jsx-no-bind': 'off',
     'no-unused-vars': 'warn',
