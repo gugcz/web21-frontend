@@ -1,8 +1,11 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+import PropTypes from 'prop-types';
 import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
+import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
+import aboutPageData from '../data/aboutPageData';
 
-export default function About() {
+const About = ({ data }) => {
   return (
     <Box m={4}>
       <Box>Title with text - BIG</Box>
@@ -12,11 +15,25 @@ export default function About() {
       <Box>Title with text and picture - RIGHT</Box>
       <Box>Title with text and picture and action - LEFT</Box>
       <Box>
-        sponzoring
-        <Box>scorecardy</Box>
+        Sponzoring
+        <ScorecardsBox stats={data.stats} />
         <Box>Title with text and picture and action - LEFT</Box>
       </Box>
       <PartnersSection />
     </Box>
   );
+};
+
+About.propTypes = {
+  data: PropTypes.shape({
+    stats: PropTypes.object,
+  }),
+};
+
+export async function getStaticProps() {
+  return {
+    props: { data: aboutPageData },
+  };
 }
+
+export default About;
