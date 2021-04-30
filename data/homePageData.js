@@ -1,10 +1,7 @@
+import { stats } from './commonData';
+
 const homePageData = {
-  stats: {
-    events: 4321,
-    gugers: 1234,
-    cities: 15,
-    visitors: 7865,
-  },
+  stats: stats,
 };
 
 export default homePageData;

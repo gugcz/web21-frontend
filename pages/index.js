@@ -2,7 +2,7 @@ import { Box, makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 import homePageData from '../data/homePageData';
-import ScorecardsBox from '../components/landingPage/ScorecardsBox/ScorecardsBox';
+import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 
 const useStyles = makeStyles(() => ({
   root: {},
