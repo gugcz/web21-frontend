@@ -5,11 +5,23 @@ import PropTypes from 'prop-types';
 import ScoreCard from '../../common/ScoreCard/ScoreCard';
 import { HatIcon, KioskIcon, LocationIcon, PersonIcon } from '../../icons/icons';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    '& > *': {
+      minWidth: 200,
+      margin: spacing(0, 2),
+    },
+    [breakpoints.down('sm')]: {
+      flexWrap: 'wrap',
+      '& > *': {
+        margin: spacing(1, 0),
+        minWidth: `50%`,
+        maxWidth: `50%`,
+      },
+    },
   },
 }));
 
