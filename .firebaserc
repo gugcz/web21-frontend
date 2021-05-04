@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gug-web"
+  },
+  "targets": {
+    "gug-web": {
+      "hosting": {
+        "staging": [
+          "staging-gug"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+name: Deploy to Firebase Hosting Preview on PR
+'on': pull_request
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: export
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GUG_WEB }}'
+          projectId: gug-web
+          target: staging
+          expires: 7d
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
