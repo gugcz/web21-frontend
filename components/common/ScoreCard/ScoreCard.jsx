@@ -67,7 +67,7 @@ const ScoreCard = ({ icon: Icon, label, value, iconSize = 55 }) => {
 ScoreCard.propTypes = {
   icon: PropTypes.elementType,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.number,
   iconSize: PropTypes.number,
 };
 
