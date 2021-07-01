@@ -38,8 +38,8 @@ function MyApp({ Component, pageProps }) {
         <Container className={classes.root} maxWidth={'lg'} disableGutters>
           <AppHeader />
           <Component {...pageProps} />
-          <AppFooter />
         </Container>
+        <AppFooter />
       </ThemeProvider>
     </>
   );
