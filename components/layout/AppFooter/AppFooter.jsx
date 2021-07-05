@@ -7,19 +7,20 @@ import NextLink from '../../common/NextLink/NextLink';
 const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   root: {
     backgroundColor: palette.primary.main,
-    padding: spacing(9, 0, 5),
+    padding: spacing(9, 4, 5),
     color: palette.primary.contrastText,
     background: ' url(/artefacts/footer_right.svg), url(/artefacts/footer_left.svg)',
     backgroundRepeat: 'no-repeat,  no-repeat',
     backgroundPosition: 'bottom right,  bottom left',
     [breakpoints.down('sm')]: {
+      padding: spacing(6, 4, 5),
       backgroundColor: palette.primary.main,
       background: 'url(/artefacts/footer_mobile.svg)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'top left',
     },
   },
-  row: {
+  content: {
     display: 'flex',
     flexDirection: 'row',
     margin: spacing(5, 4, 10),
@@ -29,13 +30,27 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
         padding: spacing(1, 0),
       },
     },
+    [breakpoints.down('sm')]: {
+      flexWrap: 'wrap',
+      margin: spacing(3, 0, 10),
+      '&> *': {
+        flex: '1 1 50%',
+        '&> *': {
+          padding: spacing(1, 0),
+        },
+      },
+    },
   },
   social: {
+    display: 'flex',
+    flexDirection: 'column',
     flex: 5,
+    alignItems: 'flex-end',
+    [breakpoints.down('sm')]: {
+      alignItems: 'flex-start',
+    },
   },
   socialIcons: {
-    justifyContent: 'flex-end',
-    display: 'flex',
     '& > *': {
       margin: spacing(0, 1),
     },
@@ -47,9 +62,9 @@ export const AppFooter = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth={'lg'}>
+      <Container maxWidth={'lg'} disableGutters>
         <Logo variant={logoVariant.BW} />
-        <Box className={classes.row}>
+        <Box className={classes.content}>
           <Box>
             <Typography variant={'subtitle1'}>Eventy</Typography>
             <Typography component={'p'} variant={'caption'}>
@@ -99,7 +114,7 @@ export const AppFooter = () => {
             </Typography>
           </Box>
           <Box className={classes.social}>
-            <Typography align="right" variant={'subtitle1'}>
+            <Typography display="inline" variant={'subtitle1'}>
               Novinky a akce na socials a v newsletteru
             </Typography>
             <Box className={classes.socialIcons}>
@@ -118,7 +133,7 @@ export const AppFooter = () => {
             </Box>
           </Box>
         </Box>
-        <Typography align="right" variant={'body2'}>
+        <Typography className={classes.social} variant={'body2'}>
           Na tomto webu straší
         </Typography>
       </Container>
