@@ -3,11 +3,20 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import Logo, { logoVariant } from '../../common/Logo/Logo';
 
-const useStyles = makeStyles(({ palette, spacing }) => ({
+const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   root: {
     backgroundColor: palette.primary.main,
-    padding: spacing(9, 0),
+    padding: spacing(9, 0, 5),
     color: palette.primary.contrastText,
+    background: ' url(/artefacts/footer_right.svg), url(/artefacts/footer_left.svg)',
+    backgroundRepeat: 'no-repeat,  no-repeat',
+    backgroundPosition: 'bottom right,  bottom left',
+    [breakpoints.down('sm')]: {
+      backgroundColor: palette.primary.main,
+      background: 'url(/artefacts/footer_mobile.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'top left',
+    },
   },
   row: {
     display: 'flex',
