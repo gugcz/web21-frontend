@@ -2,6 +2,7 @@ import { Container, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Logo, { logoVariant } from '../../common/Logo/Logo';
+import NextLink from '../../common/NextLink/NextLink';
 
 const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   root: {
@@ -31,6 +32,13 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   },
   social: {
     flex: 5,
+  },
+  socialIcons: {
+    justifyContent: 'flex-end',
+    display: 'flex',
+    '& > *': {
+      margin: spacing(0, 1),
+    },
   },
 }));
 
@@ -94,7 +102,20 @@ export const AppFooter = () => {
             <Typography align="right" variant={'subtitle1'}>
               Novinky a akce na socials a v newsletteru
             </Typography>
-            <Typography align="right">TBD</Typography>
+            <Box className={classes.socialIcons}>
+              <NextLink href="https://facebook.com">
+                <img src="/images/facebook.svg" alt="Link to GUG facebook" />
+              </NextLink>
+              <NextLink href="https://linkedIn.com">
+                <img src="/images/linkedIn.svg" alt="Link to GUG LinkedIn" />
+              </NextLink>
+              <NextLink href="https://Youtube.com">
+                <img src="/images/youtube.svg" alt="Link to GUG Youtube" />
+              </NextLink>
+              <NextLink href="https://twitter.com">
+                <img src="/images/twitter.svg" alt="Link to GUG twitter" />
+              </NextLink>
+            </Box>
           </Box>
         </Box>
         <Typography align="right" variant={'body2'}>
