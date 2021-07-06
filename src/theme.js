@@ -26,6 +26,13 @@ const theme = createMuiTheme({
       xl: 1920,
     },
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'initial',
+      },
+    },
+  },
 });
 
 theme.typography.h1 = {
