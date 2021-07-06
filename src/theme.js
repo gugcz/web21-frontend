@@ -26,6 +26,15 @@ const theme = createMuiTheme({
       xl: 1920,
     },
   },
+  typography: {
+    h1: {
+      fontSize: '4.5rem',
+      fontWeight: 700,
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      lineHeight: 1.167,
+      letterSpacing: '-0.01562em',
+    },
+  },
 });
 
 export default theme;

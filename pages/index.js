@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 import homePageData from '../data/homePageData';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
+import Headline from '../components/homePage/HPHeadline/HPHeadline';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -13,7 +14,11 @@ const Home = ({ data }) => {
 
   return (
     <Box m={4} className={classes.root}>
-      <Box>headlineIntro</Box>
+      <Headline
+        label="Vzděláváme česko v&nbsp;technologiich"
+        text="Jsme komunita GUGerů a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
+          akce a sdílíme, co umíme my a naši přednášející."
+      />
       <ScorecardsBox stats={data.stats} />
       <Box>events</Box>
       <Box>connection</Box>
