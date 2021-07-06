@@ -1,9 +1,8 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     margin: spacing(5, 0),
     display: 'flex',
@@ -40,15 +39,16 @@ const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
   },
 }));
 
-const EventsHeadline = ({ label, text }) => {
+const EventsHeadline = () => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
       <Box className={classes.content}>
-        <Typography variant="h1">{label}</Typography>
+        <Typography variant="h1">GUG eventy</Typography>
         <Typography component="div" variant="caption" className={classes.text} color="textSecondary">
-          {text}
+          Jsme komunita, která vzdělává Česko v digitálních technologiích. Nepořádáme jenom přednášky, ale taky setkání,
+          výlety a jiné akce, kde sdílíme dovednosti.
         </Typography>
         <Box className={classes.actions}>
           <Button variant="contained">Více o nás</Button>
@@ -61,9 +61,6 @@ const EventsHeadline = ({ label, text }) => {
   );
 };
 
-EventsHeadline.propTypes = {
-  label: PropTypes.string,
-  text: PropTypes.string,
-};
+EventsHeadline.propTypes = {};
 
 export default EventsHeadline;

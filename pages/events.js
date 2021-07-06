@@ -6,11 +6,7 @@ import EventsHeadline from '../components/events/EventsHeadline/EventsHeadline';
 export default function Events() {
   return (
     <Box m={4}>
-      <EventsHeadline
-        label="GUG eventy"
-        text="Jsme komunita, která vzdělává Česko v digitálních technologiích.  Nepořádáme jenom přednášky, ale
-taky setkání, výlety a jiné akce, kde sdílíme dovednosti. "
-      />
+      <EventsHeadline />
       <Box>filters</Box>
       <Box>
         events

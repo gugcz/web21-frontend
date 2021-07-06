@@ -1,9 +1,8 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     margin: spacing(5, 0),
     display: 'flex',
@@ -52,19 +51,20 @@ const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
   },
 }));
 
-const HPHeadline = ({ label, text }) => {
+const HPHeadline = () => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
       <Box className={classes.content}>
-        <Typography variant="h1">{label}</Typography>
+        <Typography variant="h1">Vzděláváme česko v&nbsp;technologiich</Typography>
         <Typography component="div" variant="caption" className={classes.text} color="textSecondary">
-          {text}
+          Jsme komunita GUGerů a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
+          akce a sdílíme, co umíme my a naši přednášející.
         </Typography>
         <Box className={classes.actions}>
           <Button color="primary" variant="contained">
-            Prozkoumej Eventy
+            Prozkoumej eventy
           </Button>
           <Button variant="contained">Přidej se k nám</Button>
         </Box>
@@ -76,9 +76,6 @@ const HPHeadline = ({ label, text }) => {
   );
 };
 
-HPHeadline.propTypes = {
-  label: PropTypes.string,
-  text: PropTypes.string,
-};
+HPHeadline.propTypes = {};
 
 export default HPHeadline;

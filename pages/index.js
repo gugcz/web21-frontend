@@ -14,11 +14,7 @@ const Home = ({ data }) => {
 
   return (
     <Box m={2} className={classes.root}>
-      <Headline
-        label="Vzděláváme česko v&nbsp;technologiich"
-        text="Jsme komunita GUGerů a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
-          akce a sdílíme, co umíme my a naši přednášející."
-      />
+      <Headline />
       <ScorecardsBox stats={data.stats} />
       <Box>events</Box>
       <Box>connection</Box>
