@@ -1,6 +1,7 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
+import NextLink from '../../common/NextLink/NextLink';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
@@ -51,7 +52,9 @@ const EventsHeadline = () => {
           výlety a jiné akce, kde sdílíme dovednosti.
         </Typography>
         <Box className={classes.actions}>
-          <Button variant="contained">Více o nás</Button>
+          <Button variant="contained" component={NextLink} href="/about">
+            Více o nás
+          </Button>
         </Box>
       </Box>
       <Box className={classes.imageBox}>

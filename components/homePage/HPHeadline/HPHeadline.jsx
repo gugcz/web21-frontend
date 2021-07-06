@@ -1,6 +1,7 @@
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
+import NextLink from '../../common/NextLink/NextLink';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     },
     [breakpoints.up('md')]: {
       '&>*': {
-        margin: spacing(0, 1),
+        margin: spacing(0, 2, 0, 0),
       },
     },
   },
@@ -63,10 +64,12 @@ const HPHeadline = () => {
           akce a sdílíme, co umíme my a naši přednášející.
         </Typography>
         <Box className={classes.actions}>
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" component={NextLink} href="/events">
             Prozkoumej eventy
           </Button>
-          <Button variant="contained">Přidej se k nám</Button>
+          <Button variant="contained" component={NextLink} href="/about">
+            Přidej se k nám
+          </Button>
         </Box>
       </Box>
       <Box className={classes.imageBox}>
