@@ -17,6 +17,10 @@
         "destination": "/events.html"
       },
       {
+        "source": "/event/**",
+        "destination": "/event/[event].html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
