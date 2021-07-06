@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "out",
-    "target": "staging", 
+    "target": "staging",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -11,6 +11,14 @@
       {
         "source": "**",
         "destination": "/index.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "/events",
+        "destination": "/events.html"
       }
     ]
   }
