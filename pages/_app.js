@@ -10,9 +10,7 @@ import { AppHeader } from '../components/layout/AppHeader/AppHeader';
 import { AppFooter } from '../components/layout/AppFooter/AppFooter';
 
 const useStyles = makeStyles(() => ({
-  root: {
-    overflow: 'auto',
-  },
+  root: {},
 }));
 
 function MyApp({ Component, pageProps }) {

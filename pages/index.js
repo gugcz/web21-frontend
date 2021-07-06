@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 import homePageData from '../data/homePageData';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
+import Headline from '../components/homePage/HPHeadline/HPHeadline';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -12,8 +13,8 @@ const Home = ({ data }) => {
   const classes = useStyles();
 
   return (
-    <Box m={4} className={classes.root}>
-      <Box>headlineIntro</Box>
+    <Box m={2} className={classes.root}>
+      <Headline />
       <ScorecardsBox stats={data.stats} />
       <Box>events</Box>
       <Box>connection</Box>
