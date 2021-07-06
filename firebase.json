@@ -9,16 +9,16 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
         "source": "/about",
         "destination": "/about.html"
       },
       {
         "source": "/events",
         "destination": "/events.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
