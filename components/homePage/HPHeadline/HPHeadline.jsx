@@ -11,23 +11,44 @@ const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
     '& > *': {
       flex: 1,
     },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column-reverse',
+    },
   },
   content: {
     margin: spacing(15, 0, 0),
+    [breakpoints.down('sm')]: {
+      margin: spacing(2, 0),
+    },
   },
   text: {
     margin: spacing(4, 0),
     maxWidth: '50%',
+    [breakpoints.down('sm')]: {
+      maxWidth: '70%',
+    },
   },
   actions: {
-    '&>*': {
-      margin: spacing(0, 1),
+    [breakpoints.down('sm')]: {
+      display: 'flex',
+      justifyContent: 'space-between',
+    },
+    [breakpoints.up('md')]: {
+      '&>*': {
+        margin: spacing(0, 1),
+      },
     },
   },
   imageBox: {
-    position: 'relative',
-    textAlign: 'right',
-    right: spacing(-4),
+    textAlign: 'center',
+    '& > img': {
+      maxWidth: '100%',
+    },
+    [breakpoints.up('md')]: {
+      position: 'relative',
+      textAlign: 'right',
+      right: spacing(-4),
+    },
   },
 }));
 

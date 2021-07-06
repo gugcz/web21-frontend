@@ -13,7 +13,7 @@ const Home = ({ data }) => {
   const classes = useStyles();
 
   return (
-    <Box m={4} className={classes.root}>
+    <Box m={2} className={classes.root}>
       <Headline
         label="Vzděláváme česko v&nbsp;technologiich"
         text="Jsme komunita GUGerů a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
