@@ -59,6 +59,7 @@ const useStyles = (chapterCode) =>
       flexDirection: 'row',
       marginRight: spacing(3),
       '&>p': {
+        marginLeft: spacing(1),
         fontWeight: 500,
       },
     },

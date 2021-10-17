@@ -26,6 +26,7 @@ const DetailButton = ({ text, href, className }) => {
 DetailButton.propTypes = {
   text: PropTypes.string,
   href: PropTypes.string,
+  className: PropTypes.any,
 };
 
 export default DetailButton;
