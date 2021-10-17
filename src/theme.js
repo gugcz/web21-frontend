@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 
 // Create a theme instance.
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#2B7EFB',
@@ -15,6 +15,12 @@ const theme = createMuiTheme({
     },
     background: {
       default: '#fff',
+    },
+    chapters: {
+      gdg: '#2B7EFB',
+      gbg: '#00AF41',
+      gxg: '#F7323F',
+      geg: '#FFC629',
     },
   },
   breakpoints: {
