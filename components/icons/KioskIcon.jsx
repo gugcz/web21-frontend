@@ -1,5 +1,8 @@
-import { SvgIcon } from '@material-ui/core';
 import IconSrc from '../../public/icons/kioskIcon.svg';
+import IconWrapper, { IconPropType } from './IconWrapper';
 
-const KioskIcon = (props) => <SvgIcon {...props} component={IconSrc} viewBox="0 0 51 52" />;
+const KioskIcon = ({ size, ...props }) => (
+  <IconWrapper {...props} size={size} component={IconSrc} viewBox="0 0 51 52" />
+);
+KioskIcon.propTypes = IconPropType;
 export default KioskIcon;

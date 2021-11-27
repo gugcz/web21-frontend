@@ -53,7 +53,7 @@ const ScoreCard = ({ icon: Icon, label, value, iconSize = 55 }) => {
 
   return (
     <Box className={classes.root}>
-      <Icon className={classes.icon} style={{ fontSize: iconSize }} />
+      <Icon className={classes.icon} size={iconSize} />
       <Box className={classes.meta}>
         <Typography variant={'h4'} className={classes.value}>
           {value}
