@@ -1,13 +1,13 @@
 import { Box, makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 import homePageData from '../data/homePageData';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 import Headline from '../components/homePage/HPHeadline/HPHeadline';
 import EventsListBox from '../components/events/EventsListBox/EventsListBox';
 import { EventsPropTypes } from '../model/events.model';
 import eventsMockData from '../data/eventsData';
+import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 
 const useStyles = makeStyles(() => ({
   root: {},

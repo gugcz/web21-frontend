@@ -1,9 +1,9 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import { PartnersSection } from '../components/sections/PartnersSection/PartnersSection';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 import aboutPageData from '../data/aboutPageData';
+import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 
 const About = ({ data }) => {
   return (
