@@ -8,6 +8,7 @@ import EventsListBox from '../components/events/EventsListBox/EventsListBox';
 import { EventsPropTypes } from '../model/events.model';
 import eventsMockData from '../data/eventsData';
 import { PartnersSection } from '../components/PartnersSection/PartnersSection';
+import { NewsletterForm } from '../components/NesletterForm/NesletterForm';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -25,7 +26,7 @@ const Home = ({ data, events }) => {
       <Box>písmenka</Box>
       <Box>Další písmenka</Box>
       <Box>Komunita</Box>
-      <Box>Newsletter</Box>
+      <NewsletterForm />
       <PartnersSection />
     </Box>
   );
