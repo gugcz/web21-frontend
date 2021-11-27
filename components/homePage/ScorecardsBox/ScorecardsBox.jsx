@@ -40,7 +40,7 @@ const ScorecardsBox = ({ stats }) => {
 };
 
 ScorecardsBox.propTypes = {
-  stats: PropTypes.shape({
+  stats: PropTypes.exact({
     visitors: PropTypes.number,
     events: PropTypes.number,
     cities: PropTypes.number,

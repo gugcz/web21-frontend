@@ -2,7 +2,9 @@ import { makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import PropTypes from 'prop-types';
-import EventBox, { EventBoxPropTypes } from '../EventBox/EventBox';
+import { isArray } from 'ramda-adjunct';
+import EventBox from '../EventBox/EventBox';
+import { EventsPropTypes } from '../../../model/events.model';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: { margin: spacing(3, 0) },
@@ -22,7 +24,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
 }));
 
-// todo - add som enice features like
+// todo - features like
 // - filter by chapter
 // - filter by ísmenko
 // - show specific events by ID
@@ -35,14 +37,14 @@ const EventsListBox = ({ events, title }) => {
     <Box className={classes.root}>
       {title && <Typography variant="h2">{title}</Typography>}
       <Box className={classes.events}>
-        {events && events.map((event) => <EventBox event={event} key={event.slug} />)}
+        {isArray(events) && events.map((event) => <EventBox event={event} key={event.slug} />)}
       </Box>
     </Box>
   );
 };
 
 EventsListBox.propTypes = {
-  events: EventBoxPropTypes,
+  events: EventsPropTypes,
   title: PropTypes.string,
 };
 

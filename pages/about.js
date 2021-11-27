@@ -25,7 +25,7 @@ const About = ({ data }) => {
 };
 
 About.propTypes = {
-  data: PropTypes.shape({
+  data: PropTypes.exact({
     stats: PropTypes.object,
   }),
 };

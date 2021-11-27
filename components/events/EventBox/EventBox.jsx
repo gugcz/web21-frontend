@@ -1,32 +1,12 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { CalendarToday as CalendarIcon, Place as PlaceIcon, Schedule as TimeIcon } from '@material-ui/icons';
 import dayjs from 'dayjs';
 import classNames from 'classnames/bind';
 import ChapterLogo from '../../common/ChapterLogo/ChapterLogo';
 import DetailButton from '../../common/DetailButton/DetailButton';
-
-export const EventBoxPropTypes = {
-  event: PropTypes.shape({
-    slug: PropTypes.string,
-    chapterId: PropTypes.string,
-    chapterName: PropTypes.string,
-    chapterCode: PropTypes.string,
-    eventName: PropTypes.string,
-    date: PropTypes.string,
-    address: PropTypes.string,
-    intro: PropTypes.string,
-    location: PropTypes.string,
-    image: PropTypes.string,
-    regLink: PropTypes.string,
-    mdText: PropTypes.string,
-    eventId: PropTypes.number,
-    timeStart: PropTypes.string,
-    timeEnd: PropTypes.string,
-  }),
-};
+import { EventPropType } from '../../../model/events.model';
 
 const useStyles = (chapterCode) =>
   makeStyles(({ spacing, palette }) => ({
@@ -116,6 +96,8 @@ const EventBox = ({ event }) => {
   );
 };
 
-EventBox.propTypes = EventBoxPropTypes;
+EventBox.propTypes = {
+  event: EventPropType,
+};
 
 export default EventBox;

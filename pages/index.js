@@ -6,14 +6,14 @@ import homePageData from '../data/homePageData';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 import Headline from '../components/homePage/HPHeadline/HPHeadline';
 import EventsListBox from '../components/events/EventsListBox/EventsListBox';
-import events from '../data/eventsData';
-import { EventBoxPropTypes } from '../components/events/EventBox/EventBox';
+import { EventsPropTypes } from '../model/events.model';
+import eventsMockData from '../data/eventsData';
 
 const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-const Home = ({ data }) => {
+const Home = ({ data, events }) => {
   const classes = useStyles();
 
   return (
@@ -32,15 +32,15 @@ const Home = ({ data }) => {
 };
 
 Home.propTypes = {
-  data: PropTypes.shape({
+  data: PropTypes.exact({
     stats: PropTypes.object,
   }),
-  events: EventBoxPropTypes,
+  events: EventsPropTypes,
 };
 
 export async function getStaticProps() {
   return {
-    props: { data: homePageData, events: events },
+    props: { data: homePageData, events: eventsMockData },
   };
 }
 

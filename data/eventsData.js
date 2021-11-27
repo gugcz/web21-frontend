@@ -1,4 +1,4 @@
-const events = [
+const eventsMockData = [
   {
     chapterId: 'chapters/bladad', /// Bude abychom popr udrzovali events updated,
     chapterName: 'GDG Jihlava',
@@ -73,4 +73,4 @@ const events = [
   },
 ];
 
-export default events;
+export default eventsMockData;
