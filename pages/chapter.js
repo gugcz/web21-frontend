@@ -1,9 +1,8 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-import PropTypes from 'prop-types';
 import { NewsletterForm } from '../components/NesletterForm/NesletterForm';
 
-const Chapter = ({ data }) => {
+const Chapter = ({}) => {
   return (
     <Box m={4}>
       <NewsletterForm />
@@ -11,14 +10,6 @@ const Chapter = ({ data }) => {
   );
 };
 
-Chapter.propTypes = {
-  data: PropTypes.exact({
-    stats: PropTypes.object,
-  }),
-};
-
-export async function getStaticProps() {
-  return {};
-}
+Chapter.propTypes = {};
 
 export default Chapter;
