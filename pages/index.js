@@ -9,6 +9,7 @@ import { EventsPropTypes } from '../model/events.model';
 import eventsMockData from '../data/eventsData';
 import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 import { NewsletterForm } from '../components/NesletterForm/NesletterForm';
+import { Nokia } from '../components/Nokia/Nokia';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -22,10 +23,10 @@ const Home = ({ data, events }) => {
       <Headline />
       <ScorecardsBox stats={data.stats} />
       <EventsListBox events={events} title="Nejbližší události" />
-      <Box>connection</Box>
+      <Nokia />
       <Box>písmenka</Box>
       <Box>Další písmenka</Box>
-      <Box>Komunita</Box>
+      {/* todo <Box>Komunita</Box> */}
       <NewsletterForm />
       <PartnersSection />
     </Box>
