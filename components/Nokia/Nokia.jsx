@@ -1,4 +1,3 @@
-import Box from '@material-ui/core/Box';
 import React from 'react';
 import PieChartIcon from '../icons/PieChartIcon';
 import InfoText from '../common/InfoText/InfoText';

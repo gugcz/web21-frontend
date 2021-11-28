@@ -2,14 +2,23 @@ import { makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
 const useStyles = makeStyles(({ spacing }) => ({
   root: {
     width: '100%',
     display: 'flex',
-    alignItems: 'flex-start',
     flexDirection: 'column',
     margin: spacing(10, 0),
+    '&.center': {
+      alignItems: 'center',
+    },
+    '&.start': {
+      alignItems: 'flex-start',
+    },
+    '&.end': {
+      alignItems: 'flex-end',
+    },
   },
   text: {
     maxWidth: 500,
@@ -26,11 +35,12 @@ const InfoText = ({
   textAlign = 'center',
   textVariant = 'body2',
   icon,
+  align = 'center',
 }) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box className={classNames(classes.root, align)}>
       {icon}
       {typeof title === 'string' ? (
         <Typography variant={titleVariant} align={titleAlign} {...titleProps}>
@@ -58,6 +68,7 @@ const InfoText = ({
 
 InfoText.propTypes = {
   icon: PropTypes.elementType,
+  align: PropTypes.oneOf(['center', 'start', 'end']),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   titleVariant: PropTypes.string, // not applied if title is elementType
   titleAlign: PropTypes.string, // not applied if title is elementType
