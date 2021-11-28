@@ -36,6 +36,7 @@ const InfoText = ({
   textVariant = 'body2',
   icon,
   align = 'center',
+  children,
 }) => {
   const classes = useStyles();
 
@@ -62,6 +63,8 @@ const InfoText = ({
       ) : (
         text
       )}
+
+      {children}
     </Box>
   );
 };

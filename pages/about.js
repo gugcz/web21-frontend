@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
@@ -90,8 +90,11 @@ const About = ({ data }) => {
           align="start"
           title="Pridáš se taky"
           textAlign="left"
-          text="GUGování je o zábavě, o tom, dělat věci s ostatními, které byste beztak dělali sami, ale nyní i s podporou na mnoha různých úrovních."
-        />
+          text="GUGování je o zábavě, o tom, dělat věci s ostatními, které byste beztak dělali sami, ale nyní i s podporou na mnoha různých úrovních.">
+          <Button color="primary" variant="contained">
+            Zhu Li, Do the thing
+          </Button>
+        </InfoText>
         VPRAVO BUDE OBRáZEK
       </Box>
       <Box className={classes.sectionDark}>
@@ -102,8 +105,11 @@ const About = ({ data }) => {
             align="start"
             title={<MeaningFullSponsoringHeadline />}
             textAlign="left"
-            text="Sdružujeme cílevědomé lidi se zájmem o technologie. Získejte visibilitu, najděte nové kolegy a buďte vidět. Hledáme smysluplné partnerství, tak se ná ozvěte a snad něco vymslíme."
-          />
+            text="Sdružujeme cílevědomé lidi se zájmem o technologie. Získejte visibilitu, najděte nové kolegy a buďte vidět. Hledáme smysluplné partnerství, tak se ná ozvěte a snad něco vymslíme.">
+            <Button color="primary" variant="contained">
+              Zhu Li, Do the thing
+            </Button>
+          </InfoText>
           VPRAVO BUDE OBRáZEK
         </Box>
       </Box>
