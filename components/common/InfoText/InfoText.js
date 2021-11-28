@@ -72,6 +72,7 @@ const InfoText = ({
 InfoText.propTypes = {
   icon: PropTypes.elementType,
   align: PropTypes.oneOf(['center', 'start', 'end']),
+  children: PropTypes.elementType,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
   titleVariant: PropTypes.string, // not applied if title is elementType
   titleAlign: PropTypes.string, // not applied if title is elementType
