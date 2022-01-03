@@ -8,7 +8,7 @@ import ImageMosaic from '../components/aboutUs/ImageMosaic';
 import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 import InfoText from '../components/common/InfoText/InfoText';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ spacing }) => ({
   root: {},
   leftTextRightImageBox: {
     display: 'flex',
@@ -19,7 +19,8 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'row',
   },
   sectionDark: {
-    backgroundColor: '#efefef',
+    //todo - low priority
+    //backgroundColor: '#efefef',
     width: '100%',
   },
 }));
