@@ -70,7 +70,7 @@ const About = ({ data }) => {
       <ImageMosaic />
       <InfoText
         title={<ConnectedWithGoogleHeadline />}
-        text="Máme ke Googlu blízko, víme o novinkách a jsme napojení na světové programy pro Google komunity. Některé globální iniciativy jsme dokonce nastartovali tady v Čechách. To nás ale nijak nebrzdí ve vlastních nápadech a projektech."
+        text="Máme ke Googlu blízko – víme o novinkách a jsme napojení na světové programy pro Google komunity. Některé globální iniciativy jsme dokonce nastartovali tady v Čechách. To nás ale nijak nebrzdí ve vlastních nápadech a projektech."
       />
       <Box className={classes.leftTextRightImageBox}>
         <InfoText
