@@ -69,17 +69,30 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-const useFeatureListStyles = makeStyles(({ spacing }) => ({
+const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
   root: {
     '& > *': {
-      backgroundColor: 'pink',
+      backgroundColor: '#F7F7F7',
       margin: spacing(1, 0),
-      '&:nth-child(1):before': {
+      padding: spacing(1),
+      fontSize: '.8rem',
+      '&:before': {
         content: '""',
-        width: 10,
-        height: 10,
+        width: 8,
+        height: 8,
         borderRadius: '50%',
         backgroundColor: 'red',
+        display: 'inline-block',
+        marginRight: spacing(1),
+      },
+      '&:nth-child(1):before': {
+        backgroundColor: palette.chapters.gdg,
+      },
+      '&:nth-child(2):before': {
+        backgroundColor: palette.chapters.geg,
+      },
+      '&:nth-child(3):before': {
+        backgroundColor: palette.chapters.gxg,
       },
     },
   },
@@ -129,15 +142,13 @@ const FeatureList = () => {
   return (
     <div className={classes.root}>
       <Typography>
-        <Typography className={classes.bold}>Podpora aktivit</Typography> – pomůžeme vám organizovat akce, propojíma na
-        správné lidi a zajistíme něco do začátku.
+        <b>Podpora aktivit</b> – pomůžeme vám organizovat akce, propojíma na správné lidi a zajistíme něco do začátku.
       </Typography>
       <Typography>
-        <Typography className={classes.bold}>Propagace</Typography> – dostanete prostor se ukázat na webu.
+        <b>Propagace</b> – dostanete prostor se ukázat na webu.
       </Typography>
       <Typography>
-        <Typography className={classes.bold}>Inspirace</Typography> – S ostatníma a od ostatních z komunity, spojujeme
-        lidi, kteří spolu hoří pro technologie.
+        <b>Inspirace</b> – S ostatníma a od ostatních z komunity, spojujeme lidi, kteří spolu hoří pro technologie.
       </Typography>
     </div>
   );
