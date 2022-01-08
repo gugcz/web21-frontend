@@ -24,9 +24,10 @@ const Home = ({ data, events }) => {
       <ScorecardsBox stats={data.stats} />
       <EventsListBox events={events} title="Nejbližší události" />
       <Nokia />
+
       <Box>písmenka</Box>
       <Box>Další písmenka</Box>
-      {/* todo <Box>Komunita</Box> */}
+      {/* todo - add later <Box>Komunita</Box> */}
       <NewsletterForm />
       <PartnersSection />
     </Box>

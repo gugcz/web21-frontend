@@ -28,7 +28,8 @@ const useStyles = makeStyles(({ spacing }) => ({
 const PageHeading = () => (
   <Typography variant="h1" align="center">
     Vzděláváme česko (nejen)
-    <br />technologiích
+    <br />
+    technologiích
   </Typography>
 );
 
