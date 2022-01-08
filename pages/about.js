@@ -103,7 +103,7 @@ const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
 
 const PageHeading = () => (
   <Typography variant="h1" align="center">
-    Vzděláváme česko (nejen)
+    Vzděláváme Česko v(nejen)
     <br />
     technologiích
   </Typography>
@@ -190,7 +190,7 @@ const About = ({ data }) => {
           title="Chceš mezi nás?"
           textAlign="left"
           text="Chceš se přidat? Svoji jízdu začni tím, že napíšeš na info@gug.cz a pak už pojedeme společně.">
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" className={classes.buttonMargin}>
             Jdu do toho s vámi!
           </Button>
         </InfoText>
@@ -208,7 +208,7 @@ const About = ({ data }) => {
             title={<MeaningFullSponsoringHeadline />}
             textAlign="left"
             text="GUG sdružuje nadšence do technologií, programátorky, seniorní lídry a specialistky nebo učitele. Máme certifikace jako je Google Developer Expert nebo Google Certified Trainer a nebojíme se je použít. Máme zkušenosti a aktivně pracujeme s diverzitou. Umíme pořádat meetupy i mezinárodní konference. Hledáme smyslupná partnerství nejen s technologickými společnostmi. Pomozte nám vzdělávat Česko, najděte nové kolegy a buďte vidět.">
-            <Button color="primary" variant="contained">
+            <Button color="primary" variant="contained" className={classes.buttonMargin}>
               Chci vědět víc.
             </Button>
           </InfoText>
