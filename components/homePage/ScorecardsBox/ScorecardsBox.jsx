@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import ScoreCard from '../../common/ScoreCard/ScoreCard';
 import { HatIcon, KioskIcon, LocationIcon, PersonIcon } from '../../icons/icons';
 
@@ -25,11 +26,11 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-const ScorecardsBox = ({ stats }) => {
+const ScorecardsBox = ({ stats, className }) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Box className={classNames(classes.root, className)}>
       {/* todo - mobile */}
       <ScoreCard icon={HatIcon} label="Lidí jsme vzdělali" value={stats.visitors} iconSize={96} />
       <ScoreCard icon={LocationIcon} label="Uspořádaných akcí" value={stats.events} iconSize={65} />

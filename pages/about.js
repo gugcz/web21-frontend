@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 import aboutPageData from '../data/aboutPageData';
 import ImageMosaic from '../components/aboutUs/ImageMosaic';
@@ -13,22 +14,67 @@ const useStyles = makeStyles(({ spacing }) => ({
   leftTextRightImageBox: {
     display: 'flex',
     flexDirection: 'row',
+    margin: spacing(8, 0),
+
+    '& > *': {
+      flex: 1,
+    },
   },
   leftImageRightText: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
+    margin: spacing(8, 0),
+
+    '& > *': {
+      flex: 1,
+    },
   },
   sectionDark: {
     //todo - low priority
     //backgroundColor: '#efefef',
     width: '100%',
   },
+  sectionMargin: {
+    margin: spacing(8, 0),
+  },
+  buttonMargin: {
+    margin: spacing(2, 0),
+  },
+  imageBox: {
+    position: 'relative',
+    flex: 1,
+    justifyContent: 'center',
+    display: 'flex',
+    '&> img': {
+      maxHeight: '100%',
+      position: 'absolute',
+    },
+  },
+  customImageBox1: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'end',
+    alignItems: 'end',
+    position: 'relative',
+    '& > img': {
+      position: 'absolute',
+      '&:nth-child(1)': {
+        maxHeight: '100%',
+        right: '20%',
+      },
+      '&:nth-child(2)': {
+        maxHeight: '70%',
+        right: '70%',
+      },
+    },
+  },
 }));
 
 const PageHeading = () => (
   <Typography variant="h1" align="center">
     Vzděláváme česko v cool
-    <br />technologiích
+    <br />
+    technologiích
   </Typography>
 );
 
@@ -80,38 +126,47 @@ const About = ({ data }) => {
           textAlign="left"
           text="Podmínky nejsou skoro žádné a výhody mnohé! Proč se přidat k některé skupině nebo si založit vlastní? Potkáte s lidmi se zájmem o internet a Google aplikace. Dozvíte se o nejnovějších technologiích a budete součástí Google komunity, nebo se dokonce můžete stát Google expertem."
         />
-        VPRAVO BUDE OBRáZEK
+        <div className={classes.imageBox}>
+          <img src="/images/about/uNeverKnow.png" />
+        </div>
       </Box>
       <Box className={classes.leftImageRightText}>
-        VLEVO BUDE OBR8ZEK
         <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text="seznam" />
+        <div className={classes.imageBox}>
+          <img src="/images/about/taste.png" />
+        </div>
       </Box>
       <Box className={classes.leftTextRightImageBox}>
         <InfoText
           align="start"
-          title="Pridáš se taky"
+          title="Přidáš se taky"
           textAlign="left"
           text="GUGování je o zábavě, o tom, dělat věci s ostatními, které byste beztak dělali sami, ale nyní i s podporou na mnoha různých úrovních.">
-          <Button color="primary" variant="contained">
+          <Button className={classes.buttonMargin} color="primary" variant="contained">
             Zhu Li, Do the thing
           </Button>
         </InfoText>
-        VPRAVO BUDE OBRáZEK
+        <div className={classes.customImageBox1}>
+          <img src="/images/about/zuzkaPeskova.png" />
+          <img src="/images/about/petoMalina.png" />
+        </div>
       </Box>
       <Box className={classes.sectionDark}>
         <InfoText title="Nemáme limity, tohle je teprve začátek" />
-        <ScorecardsBox stats={data.stats} />
+        <ScorecardsBox className={classes.sectionMargin} stats={data.stats} />
         <Box className={classes.leftTextRightImageBox}>
           <InfoText
             align="start"
             title={<MeaningFullSponsoringHeadline />}
             textAlign="left"
             text="Sdružujeme cílevědomé lidi se zájmem o technologie. Získejte visibilitu, najděte nové kolegy a buďte vidět. Hledáme smysluplné partnerství, tak se ná ozvěte a snad něco vymslíme.">
-            <Button color="primary" variant="contained">
+            <Button className={classes.buttonMargin} color="primary" variant="contained">
               Zhu Li, Do the thing
             </Button>
           </InfoText>
-          VPRAVO BUDE OBRáZEK
+          <div className={classes.imageBox}>
+            <img src="/images/about/sponzoring.png" />
+          </div>
         </Box>
       </Box>
       <PartnersSection />
