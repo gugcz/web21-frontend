@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
 import aboutPageData from '../data/aboutPageData';
 import ImageMosaic from '../components/aboutUs/ImageMosaic';
@@ -70,6 +69,25 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
+const useFeatureListStyles = makeStyles(({ spacing }) => ({
+  root: {
+    '& > *': {
+      backgroundColor: 'pink',
+      margin: spacing(1, 0),
+      '&:nth-child(1):before': {
+        content: '""',
+        width: 10,
+        height: 10,
+        borderRadius: '50%',
+        backgroundColor: 'red',
+      },
+    },
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
+}));
+
 const PageHeading = () => (
   <Typography variant="h1" align="center">
     Vzděláváme česko v cool
@@ -105,6 +123,26 @@ const MeaningFullSponsoringHeadline = () => (
   </Typography>
 );
 
+const FeatureList = () => {
+  const classes = useFeatureListStyles();
+
+  return (
+    <div className={classes.root}>
+      <Typography>
+        <Typography className={classes.bold}>Podpora aktivit</Typography> – pomůžeme vám organizovat akce, propojíma na
+        správné lidi a zajistíme něco do začátku.
+      </Typography>
+      <Typography>
+        <Typography className={classes.bold}>Propagace</Typography> – dostanete prostor se ukázat na webu.
+      </Typography>
+      <Typography>
+        <Typography className={classes.bold}>Inspirace</Typography> – S ostatníma a od ostatních z komunity, spojujeme
+        lidi, kteří spolu hoří pro technologie.
+      </Typography>
+    </div>
+  );
+};
+
 const About = ({ data }) => {
   const classes = useStyles();
   return (
@@ -131,7 +169,7 @@ const About = ({ data }) => {
         </div>
       </Box>
       <Box className={classes.leftImageRightText}>
-        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text="seznam" />
+        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text={<FeatureList />} />
         <div className={classes.imageBox}>
           <img src="/images/about/taste.png" />
         </div>
