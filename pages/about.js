@@ -13,99 +13,22 @@ const useStyles = makeStyles(({ spacing }) => ({
   leftTextRightImageBox: {
     display: 'flex',
     flexDirection: 'row',
-    margin: spacing(8, 0),
-
-    '& > *': {
-      flex: 1,
-    },
   },
   leftImageRightText: {
     display: 'flex',
-    flexDirection: 'row-reverse',
-    margin: spacing(8, 0),
-
-    '& > *': {
-      flex: 1,
-    },
+    flexDirection: 'row',
   },
   sectionDark: {
     //todo - low priority
     //backgroundColor: '#efefef',
     width: '100%',
   },
-  sectionMargin: {
-    margin: spacing(8, 0),
-  },
-  buttonMargin: {
-    margin: spacing(2, 0),
-  },
-  imageBox: {
-    position: 'relative',
-    flex: 1,
-    justifyContent: 'center',
-    display: 'flex',
-    '&> img': {
-      maxHeight: '100%',
-      position: 'absolute',
-    },
-  },
-  customImageBox1: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'end',
-    alignItems: 'end',
-    position: 'relative',
-    '& > img': {
-      position: 'absolute',
-      '&:nth-child(1)': {
-        maxHeight: '100%',
-        right: '20%',
-      },
-      '&:nth-child(2)': {
-        maxHeight: '70%',
-        right: '70%',
-      },
-    },
-  },
-}));
-
-const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
-  root: {
-    '& > *': {
-      backgroundColor: '#F7F7F7',
-      margin: spacing(1, 0),
-      padding: spacing(1),
-      fontSize: '.8rem',
-      '&:before': {
-        content: '""',
-        width: 8,
-        height: 8,
-        borderRadius: '50%',
-        backgroundColor: 'red',
-        display: 'inline-block',
-        marginRight: spacing(1),
-      },
-      '&:nth-child(1):before': {
-        backgroundColor: palette.chapters.gdg,
-      },
-      '&:nth-child(2):before': {
-        backgroundColor: palette.chapters.geg,
-      },
-      '&:nth-child(3):before': {
-        backgroundColor: palette.chapters.gxg,
-      },
-    },
-  },
-  bold: {
-    fontWeight: 'bold',
-  },
 }));
 
 const PageHeading = () => (
   <Typography variant="h1" align="center">
-    Vzděláváme česko v cool
-    <br />
-    technologiích
+    Vzděláváme česko (nejen)
+    <br />technologiích
   </Typography>
 );
 
@@ -118,14 +41,14 @@ const ConnectedWithGoogleHeadline = () => (
 
 const YouNeverKnowHeadline = () => (
   <Typography variant="h3" align="left">
-    Nikdy nevíš, co ti
-    <br /> komunita přinese
+    Komunita, co ti
+    <br /> změní život
   </Typography>
 );
 
 const TakYourTasteHeadline = () => (
   <Typography variant="h3" align="right">
-    Vezměte si z toho na <br /> co máte chuť
+    Věnuj svůj čas komunitě <br /> a získej
   </Typography>
 );
 
@@ -136,86 +59,58 @@ const MeaningFullSponsoringHeadline = () => (
   </Typography>
 );
 
-const FeatureList = () => {
-  const classes = useFeatureListStyles();
-
-  return (
-    <div className={classes.root}>
-      <Typography>
-        <b>Podpora aktivit</b> – pomůžeme vám organizovat akce, propojíma na správné lidi a zajistíme něco do začátku.
-      </Typography>
-      <Typography>
-        <b>Propagace</b> – dostanete prostor se ukázat na webu.
-      </Typography>
-      <Typography>
-        <b>Inspirace</b> – S ostatníma a od ostatních z komunity, spojujeme lidi, kteří spolu hoří pro technologie.
-      </Typography>
-    </div>
-  );
-};
-
 const About = ({ data }) => {
   const classes = useStyles();
   return (
     <Box m={4} className={classes.root}>
       <InfoText
         title={<PageHeading />}
-        text="Sdílíme zájem o technologie - online, v chatu, na přednáškách i na meetupech. Jsme skupina aktivních lidí, kteří
-        se navzájem vzdělávají a pomáhají si."
+        text="Jsme komunita nadšenců, kteří nezištně pomáhají vzděláváním a šířením technologického pokroku."
       />
       <ImageMosaic />
       <InfoText
         title={<ConnectedWithGoogleHeadline />}
-        text="Máme ke Googlu blízko, víme o novinkách a některé naše skupiny jsou napojené na světové hnutí Googlu. Naše iniciativy se tím ale neomezují a děláme toho mnohem víc."
+        text="Máme ke Googlu blízko, víme o novinkách a jsme napojení na světové programy pro Google komunity. Některé globální iniciativy jsme dokonce nastartovali tady v Čechách. To nás ale nijak nebrzdí ve vlastních nápadech a projektech."
       />
       <Box className={classes.leftTextRightImageBox}>
         <InfoText
           align="start"
           title={<YouNeverKnowHeadline />}
           textAlign="left"
-          text="Podmínky nejsou skoro žádné a výhody mnohé! Proč se přidat k některé skupině nebo si založit vlastní? Potkáte s lidmi se zájmem o internet a Google aplikace. Dozvíte se o nejnovějších technologiích a budete součástí Google komunity, nebo se dokonce můžete stát Google expertem."
+          text="Každý rok v GUGu vznikají nová přátelství, projekty a dokonce firmy. V GUGu máme Google Certified Trainers i Google Experty. S nadšením podporujeme nováčky, ať už do světa (nejen) technologií teprve pronikají, nebo už chtějí svoje zkušenosti předávat. Chceš se naučit organizovat akce, přednášet nebo se chystáš na certikaci? Přidej se k některé skupině nebo si založ vlastní a vzdělávej Česko i sebe. Je jedno, kterou cestou se vydáš, vždycky ti najdeme mentora, aby tvé první kroky s GUGem byly hračka."
         />
-        <div className={classes.imageBox}>
-          <img src="/images/about/uNeverKnow.png" />
-        </div>
+        VPRAVO BUDE OBRáZEK
       </Box>
       <Box className={classes.leftImageRightText}>
-        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text={<FeatureList />} />
-        <div className={classes.imageBox}>
-          <img src="/images/about/taste.png" />
-        </div>
+        VLEVO BUDE OBR8ZEK
+        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text="seznam" />
       </Box>
       <Box className={classes.leftTextRightImageBox}>
         <InfoText
           align="start"
-          title="Přidáš se taky"
+          title="Chceš mezi nás?"
           textAlign="left"
-          text="GUGování je o zábavě, o tom, dělat věci s ostatními, které byste beztak dělali sami, ale nyní i s podporou na mnoha různých úrovních.">
-          <Button className={classes.buttonMargin} color="primary" variant="contained">
-            Zhu Li, Do the thing
+          text="Chceš se přidat? Svoji jízdu začni tím, že napíšeš na info@gug.cz a pak už pojedeme společně.">
+          <Button color="primary" variant="contained">
+            Jdu do toho s vámi!
           </Button>
         </InfoText>
-        <div className={classes.customImageBox1}>
-          <img src="/images/about/zuzkaPeskova.png" />
-          <img src="/images/about/petoMalina.png" />
-        </div>
+        VPRAVO BUDE OBRáZEK
       </Box>
       <Box className={classes.sectionDark}>
-        <InfoText title="Nemáme limity, tohle je teprve začátek" />
-        <ScorecardsBox className={classes.sectionMargin} stats={data.stats} />
+        <InfoText title="Čísla místo slibů:" />
+        <ScorecardsBox stats={data.stats} />
         <Box className={classes.leftTextRightImageBox}>
           <InfoText
             align="start"
             title={<MeaningFullSponsoringHeadline />}
             textAlign="left"
-            text="Sdružujeme cílevědomé lidi se zájmem o technologie. Získejte visibilitu, najděte nové kolegy a buďte vidět. Hledáme smysluplné partnerství, tak se ná ozvěte a snad něco vymslíme.">
-            <Button className={classes.buttonMargin} color="primary" variant="contained">
-              Zhu Li, Do the thing
+            text="GUG sdružuje nadšence do technologií, programátorky, seniorní lídry a specialistky nebo učitele. Máme certifikace jako je Google Developer Expert nebo Google Certified Trainer a nebojíme se je použít. Máme zkušenosti a aktivně pracujeme s diverzitou. Umíme pořádat meetupy i mezinárodní konference. Hledáme smyslupná partnerství nejen s technologickými společnostmi. Pomozte nám vzdělávat Česko, najděte nové kolegy a buďte vidět.">
+            <Button color="primary" variant="contained">
+              Chci vědět víc.
             </Button>
           </InfoText>
-          <div className={classes.imageBox}>
-            <img src="/images/about/sponzoring.png" />
-          </div>
+          VPRAVO BUDE OBRáZEK
         </Box>
       </Box>
       <PartnersSection />
