@@ -65,8 +65,7 @@ const About = ({ data }) => {
     <Box m={4} className={classes.root}>
       <InfoText
         title={<PageHeading />}
-        text="Sdílíme zájem o technologie - online, v chatu, na přednáškách i na meetupech. Jsme skupina aktivních lidí, kteří
-        se navzájem vzdělávají a pomáhají si."
+        text="Jsme komunita nadšenců, kteří nezištně pomáhají vzděláváním a šířením technologického pokroku."
       />
       <ImageMosaic />
       <InfoText
