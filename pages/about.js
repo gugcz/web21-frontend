@@ -13,15 +13,91 @@ const useStyles = makeStyles(({ spacing }) => ({
   leftTextRightImageBox: {
     display: 'flex',
     flexDirection: 'row',
+    margin: spacing(8, 0),
+
+    '& > *': {
+      flex: 1,
+    },
   },
   leftImageRightText: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
+    margin: spacing(8, 0),
+
+    '& > *': {
+      flex: 1,
+    },
   },
   sectionDark: {
     //todo - low priority
     //backgroundColor: '#efefef',
     width: '100%',
+  },
+  sectionMargin: {
+    margin: spacing(8, 0),
+  },
+  buttonMargin: {
+    margin: spacing(2, 0),
+  },
+  imageBox: {
+    position: 'relative',
+    flex: 1,
+    justifyContent: 'center',
+    display: 'flex',
+    '&> img': {
+      maxHeight: '100%',
+      position: 'absolute',
+    },
+  },
+  customImageBox1: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'end',
+    alignItems: 'end',
+    position: 'relative',
+    '& > img': {
+      position: 'absolute',
+      '&:nth-child(1)': {
+        maxHeight: '100%',
+        right: '20%',
+      },
+      '&:nth-child(2)': {
+        maxHeight: '70%',
+        right: '70%',
+      },
+    },
+  },
+}));
+
+const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
+  root: {
+    '& > *': {
+      backgroundColor: '#F7F7F7',
+      margin: spacing(1, 0),
+      padding: spacing(1),
+      fontSize: '.8rem',
+      '&:before': {
+        content: '""',
+        width: 8,
+        height: 8,
+        borderRadius: '50%',
+        backgroundColor: 'red',
+        display: 'inline-block',
+        marginRight: spacing(1),
+      },
+      '&:nth-child(1):before': {
+        backgroundColor: palette.chapters.gdg,
+      },
+      '&:nth-child(2):before': {
+        backgroundColor: palette.chapters.geg,
+      },
+      '&:nth-child(3):before': {
+        backgroundColor: palette.chapters.gxg,
+      },
+    },
+  },
+  bold: {
+    fontWeight: 'bold',
   },
 }));
 
@@ -60,6 +136,24 @@ const MeaningFullSponsoringHeadline = () => (
   </Typography>
 );
 
+const FeatureList = () => {
+  const classes = useFeatureListStyles();
+
+  return (
+    <div className={classes.root}>
+      <Typography>
+        <b>Podpora aktivit</b> – pomůžeme vám organizovat akce, propojíma na správné lidi a zajistíme něco do začátku.
+      </Typography>
+      <Typography>
+        <b>Propagace</b> – dostanete prostor se ukázat na webu.
+      </Typography>
+      <Typography>
+        <b>Inspirace</b> – S ostatníma a od ostatních z komunity, spojujeme lidi, kteří spolu hoří pro technologie.
+      </Typography>
+    </div>
+  );
+};
+
 const About = ({ data }) => {
   const classes = useStyles();
   return (
@@ -80,11 +174,15 @@ const About = ({ data }) => {
           textAlign="left"
           text="Každý rok v GUGu vznikají nová přátelství, projekty a dokonce firmy. V GUGu máme Google Certified Trainers i Google Experty. S nadšením podporujeme nováčky, ať už do světa (nejen) technologií teprve pronikají, nebo už chtějí svoje zkušenosti předávat. Chceš se naučit organizovat akce, přednášet nebo se chystáš na certikaci? Přidej se k některé skupině nebo si založ vlastní a vzdělávej Česko i sebe. Je jedno, kterou cestou se vydáš, vždycky ti najdeme mentora, aby tvé první kroky s GUGem byly hračka."
         />
-        VPRAVO BUDE OBRáZEK
+        <div className={classes.imageBox}>
+          <img src="/images/about/uNeverKnow.png" />
+        </div>
       </Box>
       <Box className={classes.leftImageRightText}>
-        VLEVO BUDE OBR8ZEK
-        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text="seznam" />
+        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text={<FeatureList />} />
+        <div className={classes.imageBox}>
+          <img src="/images/about/taste.png" />
+        </div>
       </Box>
       <Box className={classes.leftTextRightImageBox}>
         <InfoText
@@ -96,11 +194,14 @@ const About = ({ data }) => {
             Jdu do toho s vámi!
           </Button>
         </InfoText>
-        VPRAVO BUDE OBRáZEK
+        <div className={classes.customImageBox1}>
+          <img src="/images/about/zuzkaPeskova.png" />
+          <img src="/images/about/petoMalina.png" />
+        </div>
       </Box>
       <Box className={classes.sectionDark}>
         <InfoText title="Čísla místo slibů:" />
-        <ScorecardsBox stats={data.stats} />
+        <ScorecardsBox className={classes.sectionMargin} stats={data.stats} />
         <Box className={classes.leftTextRightImageBox}>
           <InfoText
             align="start"
@@ -111,7 +212,9 @@ const About = ({ data }) => {
               Chci vědět víc.
             </Button>
           </InfoText>
-          VPRAVO BUDE OBRáZEK
+          <div className={classes.imageBox}>
+            <img src="/images/about/sponzoring.png" />
+          </div>
         </Box>
       </Box>
       <PartnersSection />
