@@ -58,7 +58,7 @@ const HPHeadline = () => {
   return (
     <Box className={classes.root}>
       <Box className={classes.content}>
-        <Typography variant="h1">Vzděláváme česko v&nbsp;technologiích</Typography>
+        <Typography variant="h1">Vzděláváme Česko v&nbsp;technologiích</Typography>
         <Typography component="div" variant="caption" className={classes.text} color="textSecondary">
           Jsme komunita lidí a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
           akce a sdílíme, co umíme my a naši přednášející.
