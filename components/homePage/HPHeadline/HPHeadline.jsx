@@ -65,7 +65,7 @@ const HPHeadline = () => {
         </Typography>
         <Box className={classes.actions}>
           <Button color="primary" variant="contained" component={NextLink} href="/events">
-            Prozkoumej eventy
+            Prozkoumej akce
           </Button>
           <Button variant="contained" component={NextLink} href="/about">
             Přidej se k nám
