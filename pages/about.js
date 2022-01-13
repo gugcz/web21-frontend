@@ -142,7 +142,8 @@ const FeatureList = () => {
   return (
     <div className={classes.root}>
       <Typography>
-        <b>Podporu aktivit</b> – pomůžeme ti organizovat akce, propojíme tě se správnými lidi a zajistíme něco do začátku.
+        <b>Podporu aktivit</b> – pomůžeme ti organizovat akce, propojíme tě se správnými lidi a zajistíme něco do
+        začátku.
       </Typography>
       <Typography>
         <b>Propagaci</b> – dostaneš prostor se ukázat na webu, na sociálních sítích nebo v médiích.

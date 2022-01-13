@@ -8,5 +8,5 @@ export const initiatives = {
 //todo - mocking for now, should be defined somewhere...
 export const chapters = {
   GDG_JIHLAVA: 'GDG Jihlava',
-  GDG_OSTRAVA: 'GDG Ostrava'
-}
+  GDG_OSTRAVA: 'GDG Ostrava',
+};
