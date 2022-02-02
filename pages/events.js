@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core';
-import { EventBoxPropTypes } from '../components/events/EventBox/EventBox';
 import EventsHeadline from '../components/events/EventsHeadline/EventsHeadline';
 import events from '../data/eventsData';
 import EventsListBox from '../components/events/EventsListBox/EventsListBox';
+import { EventsPropTypes } from '../model/events.model';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -23,7 +23,7 @@ const Events = ({ events }) => {
 };
 
 Events.propTypes = {
-  events: EventBoxPropTypes,
+  events: EventsPropTypes,
 };
 
 export async function getStaticProps() {

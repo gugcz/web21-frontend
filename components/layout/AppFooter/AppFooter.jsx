@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import Logo, { logoVariant } from '../../common/Logo/Logo';
 import NextLink from '../../common/NextLink/NextLink';
 
-const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
+const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
   root: {
     backgroundColor: palette.primary.main,
     padding: spacing(9, 4, 5),
@@ -19,6 +19,9 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'top left',
     },
+  },
+  contentWidth: {
+    maxWidth: gugWeb.maxWidth,
   },
   content: {
     display: 'flex',
@@ -62,7 +65,7 @@ export const AppFooter = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth={'lg'} disableGutters>
+      <Container maxWidth={'lg'} disableGutters className={classes.contentWidth}>
         <Logo variant={logoVariant.BW} />
         <Box className={classes.content}>
           <Box>

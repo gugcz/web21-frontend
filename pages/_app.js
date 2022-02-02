@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -9,8 +8,10 @@ import theme from '../src/theme';
 import { AppHeader } from '../components/layout/AppHeader/AppHeader';
 import { AppFooter } from '../components/layout/AppFooter/AppFooter';
 
-const useStyles = makeStyles(() => ({
-  root: {},
+const useStyles = makeStyles(({}) => ({
+  root: {
+    maxWidth: 1280, //todo - get it from theme - customized theme is not available here :(
+  },
 }));
 
 function MyApp({ Component, pageProps }) {
@@ -33,7 +34,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Container className={classes.root} maxWidth={'lg'} disableGutters>
+        <Container className={classes.root} disableGutters>
           <AppHeader />
           <Component {...pageProps} />
         </Container>

@@ -47,6 +47,7 @@ ScorecardsBox.propTypes = {
     cities: PropTypes.number,
     gugers: PropTypes.number,
   }),
+  className: PropTypes.any,
 };
 
 export default ScorecardsBox;

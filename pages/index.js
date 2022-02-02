@@ -9,16 +9,26 @@ import { EventsPropTypes } from '../model/events.model';
 import eventsMockData from '../data/eventsData';
 import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 import { NewsletterForm } from '../components/NesletterForm/NesletterForm';
-import { Nokia } from '../components/Nokia/Nokia';
 import InitiativeBox from '../components/homePage/InitiativeBox/InitiativeBox';
+import PieChartIcon from '../components/icons/PieChartIcon';
+import InfoText from '../components/common/InfoText/InfoText';
+import MoreInitiativeBox from '../components/homePage/MoreInitiativeBox/MoreInitiativeBox';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(({ spacing }) => ({
   root: {},
   initiative: {
     display: 'flex',
     flexWrap: 'wrap',
     '&>*': {
       width: '50%',
+    },
+  },
+  moreInitiatives: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '&>*': {
+      maxWidth: `calc(33% - ${spacing(2 * 2)}px)`,
+      margin: spacing(0, 2),
     },
   },
 }));
@@ -31,7 +41,13 @@ const Home = ({ data, events }) => {
       <Headline />
       <ScorecardsBox stats={data.stats} />
       <EventsListBox events={events} title="Nejbližší události" />
-      <Nokia />
+
+      <InfoText
+        icon={<PieChartIcon size={80} />}
+        title="Spojují nás technologie"
+        text="Máme společnou vášeň i úkol. Rozvíjet sebe a ostatní členy komunity tak, aby technologiím vládli a nenechali se
+      jimi ovládat."
+      />
 
       <Box className={classes.initiative}>
         <InitiativeBox
@@ -59,7 +75,27 @@ const Home = ({ data, events }) => {
           text="Zážitky a zábava i pomoc veřejnému prostoru, proto tady jsme. Nezáleží na tom, co používáš a jak si daleko, důležité je nadšení pro věc. Plníme mapy, píšeme recenze na místa i technologické vychytávky. Zkoušíme novinky, pořádáme akce i soutěže. "
         />
       </Box>
-      <Box>Další písmenka</Box>
+      <Box>
+        <InfoText title="Naše další iniciativy" />
+        <Box className={classes.moreInitiatives}>
+          <MoreInitiativeBox
+            logo="/images/logos/Women_Techmakers.png"
+            title="Women techmakers"
+            text="Každý rok projdou našimi programy tisíce žen, které dobře připravíme na kariéru v IT."
+          />
+          <MoreInitiativeBox
+            logo="/images/logos/Women_Will.png"
+            title="Women Will"
+            text="Pomáháme ženám z celého světa dosáhnout stejných podmínek, jako mají muži. "
+          />
+          <MoreInitiativeBox
+            logo="/images/logos/GUG_TV.png"
+            title="GUG.tv"
+            text="Tady se o společenstvu dozvíš první poslední. Máme tu videa, články, live talky, a dokonce vlastní GUGcast."
+          />
+        </Box>
+      </Box>
+
       {/* todo - add later <Box>Komunita</Box> */}
       <NewsletterForm />
       <PartnersSection />
