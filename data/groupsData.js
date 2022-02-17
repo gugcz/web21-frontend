@@ -1,6 +1,6 @@
 const groups = {
   gbg: ['Praha', 'Ostrava'],
-  gdg: ['Jihlava', 'Praha', 'Brno', 'Ostrava'],
+  gdg: ['Praha', 'Brno', 'Ostrava', 'Olomouc', 'Pardubice],
   geg: ['Ve', 'školách', 'po', 'celé', 'ČR'],
   gxg: ['Chomutov'],
 };
