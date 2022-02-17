@@ -10,6 +10,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     flexGrow: 1,
     display: 'flex',
     flexDirection: 'row',
+    marginLeft: spacing(6),
     '& >*': {
       padding: spacing(0, 1),
     },

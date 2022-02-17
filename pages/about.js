@@ -71,6 +71,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
   root: {
+    maxWidth: '70%',
     '& > *': {
       backgroundColor: '#F7F7F7',
       margin: spacing(1, 0),
@@ -110,27 +111,27 @@ const PageHeading = () => (
 );
 
 const ConnectedWithGoogleHeadline = () => (
-  <Typography variant="h3" align="center">
+  <Typography variant="h2" align="center">
     Napojení na Google,
     <br /> ale nezávislí
   </Typography>
 );
 
 const YouNeverKnowHeadline = () => (
-  <Typography variant="h3" align="left">
+  <Typography variant="h2" align="left">
     Komunita, co ti
     <br /> změní život
   </Typography>
 );
 
 const TakYourTasteHeadline = () => (
-  <Typography variant="h3" align="right">
+  <Typography variant="h2" align="right">
     Věnuj svůj čas komunitě <br /> a získej
   </Typography>
 );
 
 const MeaningFullSponsoringHeadline = () => (
-  <Typography variant="h3" align="left">
+  <Typography variant="h2" align="left">
     Sponzoring, který
     <br /> dává smysl
   </Typography>

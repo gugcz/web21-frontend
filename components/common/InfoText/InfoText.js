@@ -29,7 +29,7 @@ const InfoText = ({
   titleProps,
   title,
   titleAlign = 'center',
-  titleVariant = 'h3',
+  titleVariant = 'h2',
   textProps,
   text,
   textAlign = 'center',

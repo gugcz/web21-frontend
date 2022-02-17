@@ -1,7 +1,8 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import { PartnersIcon } from '../icons/icons';
+import InfoText from '../common/InfoText/InfoText';
 
 const useStyles = makeStyles(({ spacing }) => ({
   root: {
@@ -20,8 +21,7 @@ export const PartnersSection = () => {
 
   return (
     <Box className={classes.root}>
-      <PartnersIcon size={80} />
-      <Typography variant={'h3'}>Partneři</Typography>
+      <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
       <img className={classes.partnersTemporaryImage} src={'/images/PartnersTemporary.png'} alt="Partneři Gugu" />
       <Button variant={'contained'} color={'primary'}>
         Stát se partnerem

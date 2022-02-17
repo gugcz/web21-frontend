@@ -23,7 +23,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
   text: {
     margin: spacing(4, 0),
-    maxWidth: '50%',
+    maxWidth: '54%',
     [breakpoints.down('sm')]: {
       maxWidth: '70%',
     },

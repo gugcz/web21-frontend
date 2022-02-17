@@ -4,6 +4,7 @@ import React from 'react';
 import EmailIcon from '../icons/EmailIcon';
 import FacebookIcon from '../icons/FacebookIcon';
 import InstagramIcon from '../icons/InstagramIcon';
+import InfoText from '../common/InfoText/InfoText';
 
 const useStyles = makeStyles(({ spacing }) => ({
   root: {
@@ -61,8 +62,7 @@ export const NewsletterForm = () => {
 
   return (
     <Box className={classes.root}>
-      <EmailIcon size={80} />
-      <Typography variant={'h3'}>GUGletter</Typography>
+      <InfoText icon={<EmailIcon size={80} />} title="GUGletter" />
       <div className={classes.becauseReasons}>
         <Typography variant={'body2'}>Budeš první u zdroje a pořád v obraze</Typography>
         <Typography variant={'body2'}>Neunikne ti žádný event</Typography>
