@@ -14,6 +14,17 @@ const useStyles = makeStyles(({ spacing }) => ({
   partnersTemporaryImage: {
     margin: spacing(4, 0),
   },
+  gold: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    maxHeight: 80,
+    '&>*': {
+      objectFit: 'none',
+    },
+  },
+  action: {
+    marginTop: spacing(5),
+  },
 }));
 
 export const PartnersSection = () => {
@@ -22,8 +33,11 @@ export const PartnersSection = () => {
   return (
     <Box className={classes.root}>
       <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
-      <img className={classes.partnersTemporaryImage} src={'/images/PartnersTemporary.png'} alt="Partneři Gugu" />
-      <Button variant={'contained'} color={'primary'}>
+      <Box className={classes.gold}>
+        <img src={'/images/partners/GWG_Logo.png'} alt="Grow with google" />
+        <img src={'/images/partners/revolgy_Logo.svg'} alt="Partneři Gugu" />
+      </Box>
+      <Button variant={'contained'} color={'primary'} className={classes.action}>
         Stát se partnerem
       </Button>
     </Box>

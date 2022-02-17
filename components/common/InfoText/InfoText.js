@@ -9,7 +9,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    margin: spacing(10, 0),
+    margin: spacing(10, 0, 5),
     '&.center': {
       alignItems: 'center',
     },
