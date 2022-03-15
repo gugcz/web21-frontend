@@ -30,15 +30,7 @@ export const AppHeader = () => {
         <Logo />
         <Hidden smDown>
           <Box m={1} className={classes.menu}>
-            <NextLink href="/events">Eventy</NextLink>
             <NextLink href="/about">O nás</NextLink>
-            <NextLink
-              href={{
-                pathname: '/event/[event]',
-                query: { event: 'template' },
-              }}>
-              Event template
-            </NextLink>
           </Box>
           <JoinUsHeaderButton />
         </Hidden>
