@@ -5,6 +5,7 @@ import EmailIcon from '../icons/EmailIcon';
 import FacebookIcon from '../icons/FacebookIcon';
 import InstagramIcon from '../icons/InstagramIcon';
 import InfoText from '../common/InfoText/InfoText';
+import NextLink from '../common/NextLink/NextLink';
 
 const useStyles = makeStyles(({ spacing }) => ({
   root: {
@@ -83,9 +84,12 @@ export const NewsletterForm = () => {
       </form>
       <div className={classes.socky}>
         <Typography variant={'body2'}>A taky socky</Typography>
-        {/* todo - links */}
-        <FacebookIcon />
-        <InstagramIcon />
+        <NextLink href="https://www.facebook.com/GUG.cz">
+          <FacebookIcon />
+        </NextLink>
+        <NextLink href="https://www.instagram.com/gug.cz/">
+          <InstagramIcon />
+        </NextLink>
       </div>
     </Box>
   );

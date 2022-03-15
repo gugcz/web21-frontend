@@ -37,7 +37,7 @@ export const PartnersSection = () => {
         <img src={'/images/partners/GWG_Logo.png'} alt="Grow with google" />
         <img src={'/images/partners/revolgy_Logo.svg'} alt="Partneři Gugu" />
       </Box>
-      <Button variant={'contained'} color={'primary'} className={classes.action}>
+      <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
         Stát se partnerem
       </Button>
     </Box>

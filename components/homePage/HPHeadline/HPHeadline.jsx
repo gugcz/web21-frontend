@@ -64,10 +64,15 @@ const HPHeadline = () => {
           akce a sdílíme, co umíme my a naši přednášející.
         </Typography>
         <Box className={classes.actions}>
-          <Button color="primary" variant="contained" component={NextLink} href="/events">
-            Prozkoumej akce
-          </Button>
-          <Button variant="contained" component={NextLink} href="/about">
+          {false && (
+            <Button color="primary" variant="contained" component={NextLink} href="/events">
+              Prozkoumej akce
+            </Button>
+          )}
+          <Button
+            variant="contained"
+            component={NextLink}
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfjS6fGLijDDw-kk5VAtk67u9AGsmjqyhOZvAwz6T5suj-jdQ/viewform">
             Přidej se k nám
           </Button>
         </Box>

@@ -40,7 +40,7 @@ const Home = ({ data, events }) => {
     <Box m={2} className={classes.root}>
       <Headline />
       <ScorecardsBox stats={data.stats} />
-      <EventsListBox events={events} title="Nejbližší události" />
+      {false && <EventsListBox events={events} title="Nejbližší události" />}
 
       <InfoText
         icon={<PieChartIcon size={80} />}

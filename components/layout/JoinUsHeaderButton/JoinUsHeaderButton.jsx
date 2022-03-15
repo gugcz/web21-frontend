@@ -34,7 +34,9 @@ export const JoinUsHeaderButton = () => {
     <NextLink
       href="https://docs.google.com/forms/d/e/1FAIpQLSfjS6fGLijDDw-kk5VAtk67u9AGsmjqyhOZvAwz6T5suj-jdQ/viewform"
       className={classes.root}
-      variant="body1">
+      variant="body1"
+      target="_blank"
+      rel="noopener">
       Přidej se -&gt;
     </NextLink>
   );
