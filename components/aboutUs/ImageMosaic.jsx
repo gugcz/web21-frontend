@@ -1,8 +1,8 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import Image from 'next/image';
 import mosaicImage from '../../public/images/hp/mosaic.png';
+import SharpImage from '../common/NextOptimizedImage/SharpImage';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
@@ -23,7 +23,7 @@ const ImageMosaic = () => {
 
   return (
     <Box className={classes.root}>
-      <Image src={mosaicImage} alt="Photos from events mosaic" priority />
+      <SharpImage image={mosaicImage} alt="Photos from events mosaic" />
     </Box>
   );
 };
