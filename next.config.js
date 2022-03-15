@@ -1,6 +1,7 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
+const withPlugins = require('next-compose-plugins');
 
-module.exports = {
+module.exports = withPlugins([], {
   webpack: (config) => {
     // Note: we provide webpack above so you should not `require` it
     // Perform customizations to webpack config
@@ -15,4 +16,4 @@ module.exports = {
     // Important: return the modified config
     return config;
   },
-};
+});
