@@ -4,7 +4,7 @@ import React from 'react';
 import { PartnersIcon } from '../icons/icons';
 import InfoText from '../common/InfoText/InfoText';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     width: '100%',
     display: 'flex',
@@ -21,9 +21,22 @@ const useStyles = makeStyles(({ spacing }) => ({
     '&>*': {
       objectFit: 'none',
     },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      maxWidth: '80vw',
+      maxHeight: 'initial',
+      margin: spacing(4, 0),
+      '&>*': {
+        objectFit: 'contain',
+        height: 80,
+      },
+    },
   },
   action: {
     marginTop: spacing(5),
+    [breakpoints.down('sm')]: {
+      margin: 0,
+    },
   },
 }));
 

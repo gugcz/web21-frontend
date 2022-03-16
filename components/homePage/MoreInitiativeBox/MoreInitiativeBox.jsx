@@ -3,11 +3,14 @@ import Box from '@material-ui/core/Box';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const useStyles = makeStyles(({ palette, spacing }) => ({
+const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   root: {
     border: '1.5px solid #D2D2D2',
     borderRadius: 6,
     padding: spacing(2),
+    [breakpoints.down('sm')]: {
+      borderColor: 'transparent',
+    },
   },
   text: {
     maxWidth: 370,

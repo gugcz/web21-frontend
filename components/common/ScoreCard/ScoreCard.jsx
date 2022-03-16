@@ -13,6 +13,7 @@ const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
     },
   },
   icon: {
+    minWidth: 80,
     [breakpoints.down('sm')]: {
       maxWidth: '.6em',
     },

@@ -8,7 +8,7 @@ import InstagramIcon from '../icons/InstagramIcon';
 import InfoText from '../common/InfoText/InfoText';
 import NextLink from '../common/NextLink/NextLink';
 
-const useStyles = makeStyles(({ spacing, palette }) => ({
+const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
   root: {
     width: '100%',
     display: 'flex',
@@ -21,6 +21,10 @@ const useStyles = makeStyles(({ spacing, palette }) => ({
     '& > *': {
       margin: spacing(0, 1),
       color: 'grey', // todo
+    },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      margin: 0,
     },
   },
   form: {

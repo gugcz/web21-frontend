@@ -9,24 +9,37 @@ import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 import InfoText from '../components/common/InfoText/InfoText';
 import NextLink from '../components/common/NextLink/NextLink';
 
-const useStyles = makeStyles(({ spacing }) => ({
-  root: {},
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
+  root: {
+    '& > *': {
+      margin: spacing(10, 0),
+      [breakpoints.down('sm')]: {
+        margin: spacing(5, 0),
+      },
+    },
+  },
   leftTextRightImageBox: {
     display: 'flex',
     flexDirection: 'row',
-    margin: spacing(8, 0),
 
     '& > *': {
       flex: 1,
+    },
+
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
     },
   },
   leftImageRightText: {
     display: 'flex',
     flexDirection: 'row-reverse',
-    margin: spacing(8, 0),
 
     '& > *': {
       flex: 1,
+    },
+
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
     },
   },
   sectionDark: {
@@ -34,9 +47,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     //backgroundColor: '#efefef',
     width: '100%',
   },
-  sectionMargin: {
-    margin: spacing(8, 0),
-  },
+  sectionMargin: {},
   buttonMargin: {
     margin: spacing(2, 0),
   },
@@ -46,11 +57,12 @@ const useStyles = makeStyles(({ spacing }) => ({
     justifyContent: 'center',
     display: 'flex',
     '&> img': {
-      maxHeight: '100%',
-      position: 'absolute',
+      maxWidth: '100%',
+      objectFit: 'contain',
     },
   },
   customImageBox1: {
+    minHeight: 335,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'end',
@@ -68,9 +80,15 @@ const useStyles = makeStyles(({ spacing }) => ({
       },
     },
   },
+  mobileHeadline: {
+    [breakpoints.down('sm')]: {
+      textAlign: 'left',
+      fontSize: '2.1rem',
+    },
+  },
 }));
 
-const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
+const useFeatureListStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
   root: {
     maxWidth: '70%',
     '& > *': {
@@ -97,6 +115,9 @@ const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
         backgroundColor: palette.chapters.gxg,
       },
     },
+    [breakpoints.down('sm')]: {
+      maxWidth: '100%',
+    },
   },
   bold: {
     fontWeight: 'bold',
@@ -105,7 +126,7 @@ const useFeatureListStyles = makeStyles(({ spacing, palette }) => ({
 
 const PageHeading = () => (
   <Typography variant="h1" align="center">
-    Vzděláváme Česko v(nejen)
+    Vzděláváme Česko v
     <br />
     technologiích
   </Typography>
@@ -125,8 +146,8 @@ const YouNeverKnowHeadline = () => (
   </Typography>
 );
 
-const TakYourTasteHeadline = () => (
-  <Typography variant="h2" align="right">
+const TakYourTasteHeadline = ({ className }) => (
+  <Typography variant="h2" align="right" className={className}>
     Věnuj svůj čas komunitě <br /> a získej
   </Typography>
 );
@@ -182,7 +203,12 @@ const About = ({ data }) => {
         </div>
       </Box>
       <Box className={classes.leftImageRightText}>
-        <InfoText align="end" title={<TakYourTasteHeadline />} textAlign="right" text={<FeatureList />} />
+        <InfoText
+          align="end"
+          title={<TakYourTasteHeadline className={classes.mobileHeadline} />}
+          textAlign="right"
+          text={<FeatureList />}
+        />
         <div className={classes.imageBox}>
           <img src="/images/about/taste.png" />
         </div>
@@ -209,23 +235,20 @@ const About = ({ data }) => {
           <img src="/images/about/petoMalina.png" />
         </div>
       </Box>
-      <Box className={classes.sectionDark}>
-        <InfoText title="Čísla místo slibů:" />
-        <ScorecardsBox className={classes.sectionMargin} stats={data.stats} />
-        <Box className={classes.leftTextRightImageBox}>
-          <InfoText
-            align="start"
-            title={<MeaningFullSponsoringHeadline />}
-            textAlign="left"
-            text="GUG sdružuje nadšence do technologií, programátorky, seniorní lídry a specialistky nebo učitele. Máme certifikace jako je Google Developer Expert nebo Google Certified Trainer a nebojíme se je použít. Máme zkušenosti a aktivně pracujeme s diverzitou. Umíme pořádat meetupy i mezinárodní konference. Hledáme smyslupná partnerství nejen s technologickými společnostmi. Pomozte nám vzdělávat Česko, najděte nové kolegy a buďte vidět.">
-            <Button color="primary" variant="contained" className={classes.buttonMargin} href="mailto:filip@gug.cz">
-              Chci vědět víc
-            </Button>
-          </InfoText>
-          <div className={classes.imageBox}>
-            <img src="/images/about/sponzoring.png" />
-          </div>
-        </Box>
+      <ScorecardsBox className={classes.sectionMargin} stats={data.stats} />
+      <Box className={classes.leftTextRightImageBox}>
+        <InfoText
+          align="start"
+          title={<MeaningFullSponsoringHeadline />}
+          textAlign="left"
+          text="GUG sdružuje nadšence do technologií, programátorky, seniorní lídry a specialistky nebo učitele. Máme certifikace jako je Google Developer Expert nebo Google Certified Trainer a nebojíme se je použít. Máme zkušenosti a aktivně pracujeme s diverzitou. Umíme pořádat meetupy i mezinárodní konference. Hledáme smyslupná partnerství nejen s technologickými společnostmi. Pomozte nám vzdělávat Česko, najděte nové kolegy a buďte vidět.">
+          <Button color="primary" variant="contained" className={classes.buttonMargin} href="mailto:filip@gug.cz">
+            Chci vědět víc
+          </Button>
+        </InfoText>
+        <div className={classes.imageBox}>
+          <img src="/images/about/sponzoring.png" />
+        </div>
       </Box>
       <PartnersSection />
     </Box>

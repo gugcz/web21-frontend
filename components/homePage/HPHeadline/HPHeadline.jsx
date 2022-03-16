@@ -1,7 +1,8 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import NextLink from '../../common/NextLink/NextLink';
+import InfoText from '../../common/InfoText/InfoText';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
@@ -19,13 +20,6 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     margin: spacing(15, 0, 0),
     [breakpoints.down('sm')]: {
       margin: spacing(2, 0),
-    },
-  },
-  text: {
-    margin: spacing(4, 0),
-    maxWidth: '54%',
-    [breakpoints.down('sm')]: {
-      maxWidth: '70%',
     },
   },
   actions: {
@@ -58,11 +52,14 @@ const HPHeadline = () => {
   return (
     <Box className={classes.root}>
       <Box className={classes.content}>
-        <Typography variant="h1">Vzděláváme Česko v&nbsp;technologiích</Typography>
-        <Typography component="div" variant="caption" className={classes.text} color="textSecondary">
-          Jsme komunita lidí a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
-          akce a sdílíme, co umíme my a naši přednášející.
-        </Typography>
+        <InfoText
+          title="Vzděláváme Česko v&nbsp;technologiích"
+          titleVariant="h1"
+          titleAlign="left"
+          text="Jsme komunita lidí a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
+          akce a sdílíme, co umíme my a naši přednášející."
+          textAlign="left"
+        />
         <Box className={classes.actions}>
           {false && (
             <Button color="primary" variant="contained" component={NextLink} href="/events">
@@ -78,7 +75,7 @@ const HPHeadline = () => {
         </Box>
       </Box>
       <Box className={classes.imageBox}>
-        <img src="/images/hp/headline.png" />
+        <img src="/images/hp/headline.png" alt="Gug intro image" />
       </Box>
     </Box>
   );

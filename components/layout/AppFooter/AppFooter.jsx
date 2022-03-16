@@ -8,6 +8,7 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
   root: {
     backgroundColor: palette.primary.main,
     padding: spacing(9, 4, 5),
+    marginTop: spacing(8),
     color: palette.primary.contrastText,
     background: ' url(/artefacts/footer_right.svg), url(/artefacts/footer_left.svg)',
     backgroundRepeat: 'no-repeat,  no-repeat',
@@ -43,20 +44,26 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
         },
       },
     },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   social: {
     display: 'flex',
     flexDirection: 'column',
     flex: 5,
     alignItems: 'flex-end',
-    [breakpoints.down('sm')]: {
-      alignItems: 'flex-start',
-    },
   },
   socialIcons: {
     '& > *': {
       margin: spacing(0, 1),
     },
+  },
+  partner: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'flex-end',
+    flexDirection: 'column',
   },
 }));
 
@@ -106,7 +113,7 @@ export const AppFooter = () => {
             </Box>
           </Box>
         </Box>
-        <Typography className={classes.social} variant={'body2'}>
+        <Typography className={classes.partner} variant={'body2'}>
           Na tomto webu straší
         </Typography>
       </Container>

@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ScoreCard from '../../common/ScoreCard/ScoreCard';
 import { HatIcon, KioskIcon, LocationIcon, PersonIcon } from '../../icons/icons';
+import InfoText from '../../common/InfoText/InfoText';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
-  root: {
+  root: {},
+  scoreCards: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -26,16 +28,18 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-const ScorecardsBox = ({ stats, className }) => {
+const ScorecardsBox = ({ stats, className, title = 'Čísla místo slibů:' }) => {
   const classes = useStyles();
 
   return (
     <Box className={classNames(classes.root, className)}>
-      {/* todo - mobile */}
-      <ScoreCard icon={HatIcon} label="Lidí jsme vzdělali" value={stats.visitors} iconSize={96} />
-      <ScoreCard icon={LocationIcon} label="Uspořádaných akcí" value={stats.events} iconSize={65} />
-      <ScoreCard icon={PersonIcon} label="Nových gugerů" value={stats.gugers} />
-      <ScoreCard icon={KioskIcon} label="Měst kde působíme" value={stats.cities} />
+      {title && <InfoText title={title} />}
+      <Box className={classes.scoreCards}>
+        <ScoreCard icon={HatIcon} label="Lidí jsme vzdělali" value={stats.visitors} iconSize={96} />
+        <ScoreCard icon={LocationIcon} label="Uspořádaných akcí" value={stats.events} iconSize={65} />
+        <ScoreCard icon={PersonIcon} label="Nových gugerů" value={stats.gugers} />
+        <ScoreCard icon={KioskIcon} label="Měst kde působíme" value={stats.cities} />
+      </Box>
     </Box>
   );
 };
@@ -48,6 +52,7 @@ ScorecardsBox.propTypes = {
     gugers: PropTypes.number,
   }),
   className: PropTypes.any,
+  title: PropTypes.string,
 };
 
 export default ScorecardsBox;
