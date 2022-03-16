@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "lint": "eslint ./",
     "lint-fix": "eslint ./ --fix",
-    "lint-prod": "cross-env NODE_ENV=production eslint --ext .js,.jsx . --fix --max-warnings=0"
+    "lint-prod": "cross-env NODE_ENV=production eslint --ext .js,.jsx . --max-warnings=0"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",

@@ -146,6 +146,7 @@ const YouNeverKnowHeadline = () => (
   </Typography>
 );
 
+// eslint-disable-next-line react/prop-types
 const TakYourTasteHeadline = ({ className }) => (
   <Typography variant="h2" align="right" className={className}>
     Věnuj svůj čas komunitě <br /> a získej
