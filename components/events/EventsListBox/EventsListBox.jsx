@@ -12,6 +12,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, minmax(377px, 1fr))',
     gridTemplateRows: 'auto',
+    margin: spacing(0, -2),
     '&>*': {
       margin: spacing(2),
     },

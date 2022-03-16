@@ -8,6 +8,7 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
   root: {
     backgroundColor: palette.primary.main,
     padding: spacing(9, 4, 5),
+    marginTop: spacing(8),
     color: palette.primary.contrastText,
     background: ' url(/artefacts/footer_right.svg), url(/artefacts/footer_left.svg)',
     backgroundRepeat: 'no-repeat,  no-repeat',
@@ -43,20 +44,26 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
         },
       },
     },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   social: {
     display: 'flex',
     flexDirection: 'column',
     flex: 5,
     alignItems: 'flex-end',
-    [breakpoints.down('sm')]: {
-      alignItems: 'flex-start',
-    },
   },
   socialIcons: {
     '& > *': {
       margin: spacing(0, 1),
     },
+  },
+  partner: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'flex-end',
+    flexDirection: 'column',
   },
 }));
 
@@ -68,75 +75,45 @@ export const AppFooter = () => {
       <Container maxWidth={'lg'} disableGutters className={classes.contentWidth}>
         <Logo variant={logoVariant.BW} />
         <Box className={classes.content}>
+          {false && (
+            <Box>
+              <Typography variant={'subtitle1'}>Eventy</Typography>
+            </Box>
+          )}
+          {false && (
+            <Box>
+              <Typography variant={'subtitle1'}>Iniciativy</Typography>
+            </Box>
+          )}
+          {false && (
+            <Box>
+              <Typography variant={'subtitle1'}>GUGeři</Typography>
+            </Box>
+          )}
           <Box>
-            <Typography variant={'subtitle1'}>Eventy</Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant={'subtitle1'}>Iniciativy</Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant={'subtitle1'}>GUGeři</Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-          </Box>
-          <Box>
-            <Typography variant={'subtitle1'}>O nás</Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
-            <Typography component={'p'} variant={'caption'}>
-              menu
-            </Typography>
+            <NextLink href="/about">O nás</NextLink>
           </Box>
           <Box className={classes.social}>
             <Typography display="inline" variant={'subtitle1'}>
               Novinky a akce na socials a v newsletteru
             </Typography>
             <Box className={classes.socialIcons}>
-              <NextLink href="https://facebook.com">
+              <NextLink href="https://www.facebook.com/GUG.cz">
                 <img src="/images/facebook.svg" alt="Link to GUG facebook" />
               </NextLink>
-              <NextLink href="https://linkedIn.com">
+              <NextLink href="www.linkedin.com/company/gugcz">
                 <img src="/images/linkedIn.svg" alt="Link to GUG LinkedIn" />
               </NextLink>
-              <NextLink href="https://Youtube.com">
+              <NextLink href="https://www.youtube.com/user/gugczgroup">
                 <img src="/images/youtube.svg" alt="Link to GUG Youtube" />
               </NextLink>
-              <NextLink href="https://twitter.com">
+              <NextLink href="https://www.instagram.com/gug.cz/">
                 <img src="/images/twitter.svg" alt="Link to GUG twitter" />
               </NextLink>
             </Box>
           </Box>
         </Box>
-        <Typography className={classes.social} variant={'body2'}>
+        <Typography className={classes.partner} variant={'body2'}>
           Na tomto webu straší
         </Typography>
       </Container>

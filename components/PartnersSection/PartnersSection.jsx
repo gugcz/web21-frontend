@@ -1,9 +1,10 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import { PartnersIcon } from '../icons/icons';
+import InfoText from '../common/InfoText/InfoText';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     width: '100%',
     display: 'flex',
@@ -13,6 +14,30 @@ const useStyles = makeStyles(({ spacing }) => ({
   partnersTemporaryImage: {
     margin: spacing(4, 0),
   },
+  gold: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    maxHeight: 80,
+    '&>*': {
+      objectFit: 'none',
+    },
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      maxWidth: '80vw',
+      maxHeight: 'initial',
+      margin: spacing(4, 0),
+      '&>*': {
+        objectFit: 'contain',
+        height: 80,
+      },
+    },
+  },
+  action: {
+    marginTop: spacing(5),
+    [breakpoints.down('sm')]: {
+      margin: 0,
+    },
+  },
 }));
 
 export const PartnersSection = () => {
@@ -20,10 +45,12 @@ export const PartnersSection = () => {
 
   return (
     <Box className={classes.root}>
-      <PartnersIcon size={80} />
-      <Typography variant={'h3'}>Partneři</Typography>
-      <img className={classes.partnersTemporaryImage} src={'/images/PartnersTemporary.png'} alt="Partneři Gugu" />
-      <Button variant={'contained'} color={'primary'}>
+      <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
+      <Box className={classes.gold}>
+        <img src={'/images/partners/GWG_Logo.png'} alt="Grow with google" />
+        <img src={'/images/partners/revolgy_Logo.svg'} alt="Partneři Gugu" />
+      </Box>
+      <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
         Stát se partnerem
       </Button>
     </Box>

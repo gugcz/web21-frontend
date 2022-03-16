@@ -2,11 +2,7 @@
   "hosting": {
     "public": "out",
     "target": "staging",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "/about",

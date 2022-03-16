@@ -1,11 +1,12 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: [
-    'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:@next/next/recommended',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -29,6 +30,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies,
     'react/react-in-jsx-scope': 'off',
+    '@next/next/no-img-element': 'off',
   },
   globals: {
     React: 'writable',

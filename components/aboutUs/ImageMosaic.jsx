@@ -10,6 +10,9 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
       margin: spacing(0, 0, 2),
     },
   },
+  img: {
+    maxWidth: '100%',
+  },
 }));
 
 // todo - make mosaic more configurable
@@ -21,7 +24,7 @@ const ImageMosaic = () => {
 
   return (
     <Box className={classes.root}>
-      <img src="/images/hp/mosaic.png" />
+      <img src="/images/hp/mosaic.png" alt="Photo mosaic" className={classes.img} />
     </Box>
   );
 };

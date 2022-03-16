@@ -14,13 +14,26 @@ import PieChartIcon from '../components/icons/PieChartIcon';
 import InfoText from '../components/common/InfoText/InfoText';
 import MoreInitiativeBox from '../components/homePage/MoreInitiativeBox/MoreInitiativeBox';
 
-const useStyles = makeStyles(({ spacing }) => ({
-  root: {},
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
+  root: {
+    '& > *': {
+      margin: spacing(10, 0),
+      [breakpoints.down('sm')]: {
+        margin: spacing(5, 0),
+      },
+    },
+  },
   initiative: {
     display: 'flex',
     flexWrap: 'wrap',
     '&>*': {
       width: '50%',
+      [breakpoints.down('sm')]: {
+        width: '100%',
+      },
+    },
+    [breakpoints.down('sm')]: {
+      margin: spacing(5, -5),
     },
   },
   moreInitiatives: {
@@ -29,6 +42,9 @@ const useStyles = makeStyles(({ spacing }) => ({
     '&>*': {
       maxWidth: `calc(33% - ${spacing(2 * 2)}px)`,
       margin: spacing(0, 2),
+      [breakpoints.down('sm')]: {
+        maxWidth: '100%',
+      },
     },
   },
 }));
@@ -40,7 +56,7 @@ const Home = ({ data, events }) => {
     <Box m={2} className={classes.root}>
       <Headline />
       <ScorecardsBox stats={data.stats} />
-      <EventsListBox events={events} title="Nejbližší události" />
+      {false && <EventsListBox events={events} title="Nejbližší události" />}
 
       <InfoText
         icon={<PieChartIcon size={80} />}

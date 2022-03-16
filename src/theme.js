@@ -45,13 +45,35 @@ const theme = createTheme({
   },
 });
 
-theme.typography.h1 = {
-  fontSize: '4.5rem',
-  fontWeight: 700,
-  lineHeight: 1.167,
-  letterSpacing: '-0.01562em',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '2.4rem',
+theme.typography = {
+  ...theme.typography,
+  h1: {
+    ...theme.typography.h1,
+    fontSize: '4.4rem',
+    fontWeight: 700,
+    lineHeight: 1.167,
+    letterSpacing: '-0.01562em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.4rem',
+    },
+  },
+  h2: {
+    ...theme.typography.h1,
+    fontSize: '3rem',
+    fontWeight: 700,
+    lineHeight: 1.167,
+    letterSpacing: '-0.01562em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.4rem',
+    },
+  },
+  caption: {
+    ...theme.typography.caption,
+    fontSize: '1rem',
+  },
+  body2: {
+    ...theme.typography.caption,
+    fontSize: '1rem',
   },
 };
 

@@ -4,12 +4,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ breakpoints }) => ({
   root: {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    margin: spacing(10, 0),
     '&.center': {
       alignItems: 'center',
     },
@@ -22,6 +21,9 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
   text: {
     maxWidth: 500,
+    [breakpoints.down('sm')]: {
+      alignItems: 'center',
+    },
   },
 }));
 
@@ -29,7 +31,7 @@ const InfoText = ({
   titleProps,
   title,
   titleAlign = 'center',
-  titleVariant = 'h3',
+  titleVariant = 'h2',
   textProps,
   text,
   textAlign = 'center',
@@ -44,7 +46,7 @@ const InfoText = ({
     <Box className={classNames(classes.root, align)}>
       {icon}
       {typeof title === 'string' ? (
-        <Typography variant={titleVariant} align={titleAlign} {...titleProps}>
+        <Typography variant={titleVariant} align={titleAlign} {...titleProps} className={classes.title}>
           {title}
         </Typography>
       ) : (
