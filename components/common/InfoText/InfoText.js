@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-const useStyles = makeStyles(({ breakpoints }) => ({
+const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
     width: '100%',
     display: 'flex',
@@ -19,8 +19,12 @@ const useStyles = makeStyles(({ breakpoints }) => ({
       alignItems: 'flex-end',
     },
   },
+  title: {
+    margin: spacing(2, 0),
+  },
   text: {
     maxWidth: 500,
+    margin: spacing(2, 0),
     [breakpoints.down('sm')]: {
       alignItems: 'center',
     },
@@ -72,14 +76,14 @@ const InfoText = ({
 };
 
 InfoText.propTypes = {
-  icon: PropTypes.elementType,
+  icon: PropTypes.element,
   align: PropTypes.oneOf(['center', 'start', 'end']),
-  children: PropTypes.elementType,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
+  children: PropTypes.element,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   titleVariant: PropTypes.string, // not applied if title is elementType
   titleAlign: PropTypes.string, // not applied if title is elementType
   titleProps: PropTypes.any, // not applied if title is elementType
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]),
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   textVariant: PropTypes.string, // not applied if title is elementType
   textAlign: PropTypes.string, // not applied if title is elementType
   textProps: PropTypes.any, // not applied if title is elementType

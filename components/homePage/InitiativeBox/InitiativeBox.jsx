@@ -1,6 +1,6 @@
 import { Chip, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { shuffleArray } from '../../../src/utils';
@@ -63,8 +63,11 @@ const lettersMap = {
   red: 'GXG',
 };
 
-const InitiativeBox = ({ title, text, variant, groups = [] }) => {
+const InitiativeBox = ({ title, text, variant, groups = [], shuffleGroups = true }) => {
   const classes = useStyles();
+
+  useEffect(() => {}, [groups]);
+
   return (
     <Box className={classes.root}>
       <div className={classNames(classes.pacman, variant)} />
@@ -73,7 +76,7 @@ const InitiativeBox = ({ title, text, variant, groups = [] }) => {
         {text}
       </Typography>
       <Typography variant={'subtitle2'}>Kde najdete {lettersMap[variant]}</Typography>
-      {shuffleArray(groups).map((groupName) => (
+      {shuffleArray(groups, shuffleGroups).map((groupName) => (
         <Chip key={groupName} size="small" label={groupName} className={classes.chip} />
       ))}
     </Box>
@@ -85,6 +88,7 @@ InitiativeBox.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   groups: PropTypes.array,
+  shuffleGroups: PropTypes.bool,
 };
 
 export default InitiativeBox;

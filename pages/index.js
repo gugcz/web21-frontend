@@ -76,13 +76,14 @@ const Home = ({ data, events }) => {
           variant="yellow"
           title="Pro vzdělávání"
           groups={data.groups.geg}
+          shuffleGroups={false}
           text="Technologie do škol, do výuky, k dětem.  My učitelé a ředitelky si malé cíle nedáváme. Kočujeme po konferencích a vzdělávacích akcích, v rukách iPady a Chromebooky, předáváme své know-how. Díky komunitě učíme sami sebe, žáky i další učitele."
         />
         <InitiativeBox
           variant="green"
           title="Pro podnikání"
           groups={data.groups.gbg}
-          text="Markeťačky, obchodnice, freelanceři, manažeky či majitelky firem. Všechny nás pohání stejná vášeň - prosperující podnikání nebo firma. Technologické vychytávky a přináležitost ke komunitě nám pomáhají dosahovat cílů, ať už jsou jakékoliv. Radíme si, inspirujeme se a rosteme společně."
+          text="Markeťačky, obchodnice, freelanceři, manažerky či majitelky firem. Všechny nás pohání stejná vášeň - prosperující podnikání nebo firma. Technologické vychytávky a přináležitost ke komunitě nám pomáhají dosahovat cílů, ať už jsou jakékoliv. Radíme si, inspirujeme se a rosteme společně."
         />
         <InitiativeBox
           variant="red"

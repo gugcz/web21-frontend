@@ -59,6 +59,7 @@ const HPHeadline = () => {
           text="Jsme komunita lidí a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
           akce a sdílíme, co umíme my a naši přednášející."
           textAlign="left"
+          align="start"
         />
         <Box className={classes.actions}>
           {false && (
@@ -69,6 +70,8 @@ const HPHeadline = () => {
           <Button
             variant="contained"
             component={NextLink}
+            color="primary"
+            target="_blank"
             href="https://docs.google.com/forms/d/e/1FAIpQLSfjS6fGLijDDw-kk5VAtk67u9AGsmjqyhOZvAwz6T5suj-jdQ/viewform">
             Přidej se k nám
           </Button>

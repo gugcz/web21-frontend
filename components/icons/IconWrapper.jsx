@@ -11,7 +11,7 @@ const IconWrapper = ({ size = 60, component, viewBox, ...props }) => (
 
 IconWrapper.propTypes = {
   size: PropTypes.number,
-  component: PropTypes.element,
+  component: PropTypes.elementType,
   viewBox: PropTypes.string,
 };
 
