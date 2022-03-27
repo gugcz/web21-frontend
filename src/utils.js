@@ -1,4 +1,7 @@
-const shuffleArray = (unshuffled) => {
+const shuffleArray = (unshuffled, shuffle = true) => {
+  if (shuffle === false) {
+    return unshuffled;
+  }
   return unshuffled
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)

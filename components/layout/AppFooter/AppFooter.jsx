@@ -101,14 +101,17 @@ export const AppFooter = () => {
               <NextLink href="https://www.facebook.com/GUG.cz">
                 <img src="/images/facebook.svg" alt="Link to GUG facebook" />
               </NextLink>
-              <NextLink href="www.linkedin.com/company/gugcz">
+              <NextLink href="https://www.linkedin.com/company/gugcz">
                 <img src="/images/linkedIn.svg" alt="Link to GUG LinkedIn" />
               </NextLink>
               <NextLink href="https://www.youtube.com/user/gugczgroup">
                 <img src="/images/youtube.svg" alt="Link to GUG Youtube" />
               </NextLink>
-              <NextLink href="https://www.instagram.com/gug.cz/">
+              <NextLink href="https://twitter.com/GUGcz">
                 <img src="/images/twitter.svg" alt="Link to GUG twitter" />
+              </NextLink>{' '}
+              <NextLink href="https://www.instagram.com/gug.cz/">
+                <img src="/images/instagram.svg" alt="Link to GUG twitter" />
               </NextLink>
             </Box>
           </Box>

@@ -63,7 +63,7 @@ const lettersMap = {
   red: 'GXG',
 };
 
-const InitiativeBox = ({ title, text, variant, groups = [] }) => {
+const InitiativeBox = ({ title, text, variant, groups = [], shuffleGroups = true }) => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
@@ -73,7 +73,7 @@ const InitiativeBox = ({ title, text, variant, groups = [] }) => {
         {text}
       </Typography>
       <Typography variant={'subtitle2'}>Kde najdete {lettersMap[variant]}</Typography>
-      {shuffleArray(groups).map((groupName) => (
+      {shuffleArray(groups, shuffleGroups).map((groupName) => (
         <Chip key={groupName} size="small" label={groupName} className={classes.chip} />
       ))}
     </Box>
@@ -85,6 +85,7 @@ InitiativeBox.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   groups: PropTypes.array,
+  shuffleGroups: PropTypes.bool,
 };
 
 export default InitiativeBox;

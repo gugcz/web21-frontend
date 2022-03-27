@@ -8,6 +8,8 @@ import ImageMosaic from '../components/aboutUs/ImageMosaic';
 import { PartnersSection } from '../components/PartnersSection/PartnersSection';
 import InfoText from '../components/common/InfoText/InfoText';
 import NextLink from '../components/common/NextLink/NextLink';
+import Dot from '../components/common/Dot/Dot';
+import { logoVariant } from '../components/common/ChapterLogo/ChapterLogo';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
@@ -88,7 +90,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
 }));
 
-const useFeatureListStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
+const useFeatureListStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     maxWidth: '70%',
     '& > *': {
@@ -96,24 +98,6 @@ const useFeatureListStyles = makeStyles(({ spacing, palette, breakpoints }) => (
       margin: spacing(1, 0),
       padding: spacing(1),
       fontSize: '.8rem',
-      '&:before': {
-        content: '""',
-        width: 8,
-        height: 8,
-        borderRadius: '50%',
-        backgroundColor: 'red',
-        display: 'inline-block',
-        marginRight: spacing(1),
-      },
-      '&:nth-child(1):before': {
-        backgroundColor: palette.chapters.gdg,
-      },
-      '&:nth-child(2):before': {
-        backgroundColor: palette.chapters.geg,
-      },
-      '&:nth-child(3):before': {
-        backgroundColor: palette.chapters.gxg,
-      },
     },
     [breakpoints.down('sm')]: {
       maxWidth: '100%',
@@ -166,13 +150,16 @@ const FeatureList = () => {
   return (
     <div className={classes.root}>
       <Typography>
+        <Dot />
         <b>Podporu aktivit</b> – pomůžeme ti organizovat akce, propojíme tě se správnými lidi a zajistíme něco do
         začátku.
       </Typography>
       <Typography>
+        <Dot variant={logoVariant.GBG} />
         <b>Propagaci</b> – dostaneš prostor se ukázat na webu, na sociálních sítích nebo v médiích.
       </Typography>
       <Typography>
+        <Dot variant={logoVariant.GEG} />
         <b>Inspiraci</b> – získej nápady i zpětnou vazbu od ostatních z komunity a stoupej ke hvězdám.
       </Typography>
     </div>

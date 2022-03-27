@@ -7,6 +7,8 @@ import FacebookIcon from '../icons/FacebookIcon';
 import InstagramIcon from '../icons/InstagramIcon';
 import InfoText from '../common/InfoText/InfoText';
 import NextLink from '../common/NextLink/NextLink';
+import Dot from '../common/Dot/Dot';
+import { logoVariant } from '../common/ChapterLogo/ChapterLogo';
 
 const useStyles = makeStyles(({ spacing, palette, breakpoints }) => ({
   root: {
@@ -115,9 +117,18 @@ export const NewsletterForm = () => {
     <Box className={classes.root}>
       <InfoText icon={<EmailIcon size={80} />} title="GUGletter" />
       <div className={classes.becauseReasons}>
-        <Typography variant={'body2'}>Budeš první u zdroje a pořád v obraze</Typography>
-        <Typography variant={'body2'}>Neunikne ti žádný event</Typography>
-        <Typography variant={'body2'}>Max 2 maily měsíčně, nic na sílu</Typography>
+        <Typography variant={'body2'}>
+          <Dot />
+          Budeš první u zdroje a pořád v obraze
+        </Typography>
+        <Typography variant={'body2'}>
+          <Dot variant={logoVariant.GXG} />
+          Neunikne ti žádný event
+        </Typography>
+        <Typography variant={'body2'}>
+          <Dot variant={logoVariant.GBG} />
+          Max 2 maily měsíčně, nic na sílu
+        </Typography>
       </div>
       <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField

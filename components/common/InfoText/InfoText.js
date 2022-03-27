@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-const useStyles = makeStyles(({ breakpoints }) => ({
+const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
     width: '100%',
     display: 'flex',
@@ -19,8 +19,12 @@ const useStyles = makeStyles(({ breakpoints }) => ({
       alignItems: 'flex-end',
     },
   },
+  title: {
+    margin: spacing(2, 0),
+  },
   text: {
     maxWidth: 500,
+    margin: spacing(2, 0),
     [breakpoints.down('sm')]: {
       alignItems: 'center',
     },
