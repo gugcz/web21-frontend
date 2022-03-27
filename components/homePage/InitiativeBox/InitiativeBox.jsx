@@ -1,6 +1,6 @@
 import { Chip, makeStyles, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { shuffleArray } from '../../../src/utils';
@@ -65,6 +65,9 @@ const lettersMap = {
 
 const InitiativeBox = ({ title, text, variant, groups = [], shuffleGroups = true }) => {
   const classes = useStyles();
+
+  useEffect(() => {}, [groups]);
+
   return (
     <Box className={classes.root}>
       <div className={classNames(classes.pacman, variant)} />

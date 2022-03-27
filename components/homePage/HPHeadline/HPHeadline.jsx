@@ -59,7 +59,7 @@ const HPHeadline = () => {
           text="Jsme komunita lidí a hoříme pro stejnou věc: sdílet a předávat dovednosti v nových technologiích. Pořádáme
           akce a sdílíme, co umíme my a naši přednášející."
           textAlign="left"
-          align="left"
+          align="start"
         />
         <Box className={classes.actions}>
           {false && (
