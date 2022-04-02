@@ -1,5 +1,5 @@
 {
-  "hosting": {
+  "hosting": [{
     "public": "out",
     "target": "staging",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
@@ -21,5 +21,28 @@
         "destination": "/index.html"
       }
     ]
-  }
+  },
+    {
+      "public": "out",
+      "target": "production",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "/about",
+          "destination": "/about.html"
+        },
+        {
+          "source": "/events",
+          "destination": "/events.html"
+        },
+        {
+          "source": "/event/**",
+          "destination": "/event/[event].html"
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }]
 }
