@@ -7,8 +7,11 @@
       "hosting": {
         "staging": [
           "staging-gug"
+        ],
+        "production":[
+            "public-gug"
         ]
+        }
       }
     }
   }
-}
