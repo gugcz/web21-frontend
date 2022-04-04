@@ -1,10 +1,13 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import Circle from '../UI/Circle/Circle';
+import { logoVariant } from '../common/ChapterLogo/ChapterLogo';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     [breakpoints.down('sm')]: {
       margin: spacing(0, 0, 2),
@@ -24,6 +27,7 @@ const ImageMosaic = () => {
 
   return (
     <Box className={classes.root}>
+      <Circle size={'S'} variant={logoVariant.GXG} />
       <img src="/images/hp/mosaic.png" alt="Photo mosaic" className={classes.img} />
     </Box>
   );
