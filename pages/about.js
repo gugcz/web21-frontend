@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import ScorecardsBox from '../components/homePage/ScorecardsBox/ScorecardsBox';
@@ -71,14 +71,25 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     alignItems: 'end',
     position: 'relative',
     '& > img': {
-      position: 'absolute',
-      '&:nth-child(1)': {
-        maxHeight: '100%',
-        right: '20%',
+      [breakpoints.up('md')]: {
+        position: 'absolute',
+        '&:nth-child(1)': {
+          maxHeight: '100%',
+          right: '20%',
+        },
+        '&:nth-child(2)': {
+          maxHeight: '70%',
+          right: '70%',
+        },
       },
-      '&:nth-child(2)': {
-        maxHeight: '70%',
-        right: '70%',
+      [breakpoints.down('sm')]: {
+        '&:nth-child(1)': {
+          maxWidth: '100%',
+          objectFit: 'contain',
+        },
+        '&:nth-child(2)': {
+          display: 'none',
+        },
       },
     },
   },
@@ -132,7 +143,7 @@ const YouNeverKnowHeadline = () => (
 
 // eslint-disable-next-line react/prop-types
 const TakYourTasteHeadline = ({ className }) => (
-  <Typography variant="h2" align="right" className={className}>
+  <Typography variant="h2" className={className}>
     Věnuj svůj čas komunitě <br /> a získej
   </Typography>
 );
@@ -168,6 +179,10 @@ const FeatureList = () => {
 
 const About = ({ data }) => {
   const classes = useStyles();
+
+  const theme = useTheme();
+  const isTabletAndBelow = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Box m={4} className={classes.root}>
       <InfoText
@@ -192,7 +207,7 @@ const About = ({ data }) => {
       </Box>
       <Box className={classes.leftImageRightText}>
         <InfoText
-          align="end"
+          align={isTabletAndBelow ? 'start' : 'end'}
           title={<TakYourTasteHeadline className={classes.mobileHeadline} />}
           textAlign="right"
           text={<FeatureList />}

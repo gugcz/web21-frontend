@@ -20,9 +20,8 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     [breakpoints.down('sm')]: {
       flexWrap: 'wrap',
       '& > *': {
-        margin: spacing(1, 0),
-        minWidth: `50%`,
-        maxWidth: `50%`,
+        margin: spacing(1.5, 0),
+        flex: '1 1 50%',
       },
     },
   },
