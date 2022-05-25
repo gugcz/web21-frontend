@@ -26,4 +26,33 @@ export const EventPropType = PropTypes.exact({
   organizers: PropTypes.arrayOf(OrganizersPropTypes),
 });
 
-export const EventsPropTypes = PropTypes.arrayOf(EventPropType);
+export const TalkBaseEventPropType = PropTypes.exact({
+  title: PropTypes.string,
+  startTime: PropTypes.string,
+  endTime: PropTypes.string,
+  userFriendlyUrl: PropTypes.string,
+  type: PropTypes.oneOf(['ONLINE', 'HYBRID']),
+  url: PropTypes.string,
+  timezone: PropTypes.string,
+  coverPhoto: PropTypes.shape({
+    url: PropTypes.string,
+    /* and many others */
+  }),
+  address: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    street: PropTypes.string,
+    city: PropTypes.string,
+    postalCode: PropTypes.string,
+    countryCode: PropTypes.string,
+    houseNumber: PropTypes.string,
+    externalId: PropTypes.string,
+    externalUrl: PropTypes.string,
+    formattedAddress: PropTypes.string,
+    createdAt: PropTypes.string,
+    updatedAt: PropTypes.string,
+    deletedAt: PropTypes.string,
+  }),
+});
+
+export const EventsPropTypes = PropTypes.arrayOf(TalkBaseEventPropType);

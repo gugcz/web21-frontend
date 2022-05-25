@@ -17,7 +17,12 @@ const DetailButton = ({ text, href, className }) => {
   const classes = useStyles();
 
   return (
-    <Button className={classNames(classes.root, className)} variant="contained" component={NextLink} href={href}>
+    <Button
+      className={classNames(classes.root, className)}
+      variant="contained"
+      component={NextLink}
+      href={href}
+      target="_blank">
       {text}
     </Button>
   );
