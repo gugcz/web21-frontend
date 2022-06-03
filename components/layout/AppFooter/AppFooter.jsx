@@ -48,6 +48,10 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints, gugWeb }) => ({
       flexDirection: 'column',
     },
   },
+  links: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
   social: {
     display: 'flex',
     flexDirection: 'column',
@@ -90,8 +94,9 @@ export const AppFooter = () => {
               <Typography variant={'subtitle1'}>GUGeři</Typography>
             </Box>
           )}
-          <Box>
+          <Box className={classes.links}>
             <NextLink href="/about">O nás</NextLink>
+            <NextLink href="/events">Události</NextLink>
           </Box>
           <Box className={classes.social}>
             <Typography display="inline" variant={'subtitle1'}>
