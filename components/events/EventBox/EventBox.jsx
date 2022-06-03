@@ -4,9 +4,8 @@ import React from 'react';
 import { CalendarToday as CalendarIcon, Place as PlaceIcon, Schedule as TimeIcon } from '@material-ui/icons';
 import dayjs from 'dayjs';
 import classNames from 'classnames/bind';
-import ChapterLogo from '../../common/ChapterLogo/ChapterLogo';
 import DetailButton from '../../common/DetailButton/DetailButton';
-import { EventPropType } from '../../../model/events.model';
+import { TalkBaseEventPropType } from '../../../model/events.model';
 
 const useStyles = (chapterCode) =>
   makeStyles(({ spacing, palette }) => ({
@@ -15,6 +14,8 @@ const useStyles = (chapterCode) =>
       borderColor: palette.chapters[chapterCode],
       borderRadius: 6,
       padding: spacing(2),
+      display: 'flex',
+      flexDirection: 'column',
     },
     image: {
       width: '100%',
@@ -50,12 +51,12 @@ const useStyles = (chapterCode) =>
       color: 'red',
     },
     rvsp: {
-      // todo - align button with end of box in grid
+      marginTop: 'auto',
     },
   }));
 
 const EventBox = ({ event }) => {
-  const classes = useStyles(event.chapterCode.toLowerCase())();
+  const classes = useStyles('gdg')();
 
   if (!event) {
     return null;
@@ -63,41 +64,33 @@ const EventBox = ({ event }) => {
 
   return (
     <Box className={classes.root} boxShadow={2}>
-      <ChapterLogo variant={event.chapterCode} />
-      <img src={event.image} className={classes.image} />
+      {event.coverPhoto && <img src={event.coverPhoto?.url} className={classes.image} />}
       <Typography variant="h4" className={classes.eventName}>
-        {event.eventName}
-      </Typography>
-      <Typography variant="body1" className={classes.intro}>
-        {event.intro}
+        {event.title}
       </Typography>
       <box className={classes.timeAndDateWrapper}>
         <box className={classes.iconWithText}>
           <CalendarIcon />
-          <Typography>{dayjs(event.date).format('DD.MM.YY')}</Typography>
+          <Typography>{dayjs(event.startTime).format('DD.MM.YY')}</Typography>
         </box>
         <box className={classes.iconWithText}>
           <TimeIcon />
           <Typography>
-            {event.timeStart} - {event.timeEnd}
+            {dayjs(event.startTime).format('HH:mm')}- {dayjs(event.endTime).format('HH:mm')}
           </Typography>
         </box>
       </box>
       <box className={classNames(classes.locationWrapper, classes.iconWithText)}>
         <PlaceIcon className={classes.redPlace} />
-        <Typography>{event.address}</Typography>
+        <Typography>{event?.address?.formattedAddress}</Typography>
       </box>
-      <DetailButton
-        className={classes.rvsp}
-        href={`/event/${encodeURIComponent(event.slug)}`}
-        text="Chytit místo na akci"
-      />
+      <DetailButton className={classes.rvsp} href={`https://talkbase.io/${event.url}`} text="Chytit místo na akci" />
     </Box>
   );
 };
 
 EventBox.propTypes = {
-  event: EventPropType,
+  event: TalkBaseEventPropType,
 };
 
 export default EventBox;

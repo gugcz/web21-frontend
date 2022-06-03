@@ -43,6 +43,7 @@ export const AppHeader = () => {
         <Hidden smDown>
           <Box m={1} className={classes.menu}>
             <NextLink href="/about">O nás</NextLink>
+            <NextLink href="/events">Události</NextLink>
           </Box>
           <JoinUsHeaderButton />
         </Hidden>
