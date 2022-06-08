@@ -31,14 +31,14 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
 // - show specific events by ID
 // - ....
 
-const EventsListBox = ({ events, title }) => {
+const EventsListBox = ({ events, title, past = false }) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
       {title && <Typography variant="h2">{title}</Typography>}
       <Box className={classes.events}>
-        {isArray(events) && events.map((event) => <EventBox event={event} key={event.slug} />)}
+        {isArray(events) && events.map((event) => <EventBox event={event} key={event.userFriendlyUrl} past={past} />)}
       </Box>
     </Box>
   );

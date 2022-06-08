@@ -31,7 +31,7 @@ export const TalkBaseEventPropType = PropTypes.exact({
   startTime: PropTypes.string,
   endTime: PropTypes.string,
   userFriendlyUrl: PropTypes.string,
-  type: PropTypes.oneOf(['ONLINE', 'HYBRID']),
+  type: PropTypes.oneOf(['ONLINE', 'HYBRID', 'OFFLINE']),
   url: PropTypes.string,
   timezone: PropTypes.string,
   coverPhoto: PropTypes.shape({
