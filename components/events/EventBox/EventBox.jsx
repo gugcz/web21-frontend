@@ -87,7 +87,7 @@ const EventBox = ({ event, past }) => {
       </box>
       <DetailButton
         className={classes.rvsp}
-        href={`https://talkbase.io/${event.url}`}
+        href={`https://talkbase.io${event.url}`}
         text={past ? 'Zobrazit akci' : 'Chytit místo na akci'}
       />
     </Box>
