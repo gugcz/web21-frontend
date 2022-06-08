@@ -15,8 +15,11 @@ const Events = ({ pastEvents, upcomingEvents }) => {
 
   const [events, setEvents] = useState({ pastEvents, upcomingEvents });
 
-  useEffect(async () => {
-    setEvents(await fetchEvents());
+  useEffect(() => {
+    const fetchAsyncWrapper = async () => {
+      setEvents(await fetchEvents());
+    };
+    fetchAsyncWrapper();
   }, [setEvents, fetchEvents]);
 
   return (
