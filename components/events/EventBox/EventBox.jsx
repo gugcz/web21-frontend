@@ -55,8 +55,9 @@ const useStyles = (chapterCode) =>
     },
   }));
 
-const EventBox = ({ event }) => {
-  const classes = useStyles('gdg')();
+const EventBox = ({ event, past }) => {
+  const visual = ['gdg', 'gbg', 'gxg', 'geg'];
+  const classes = useStyles(visual[Math.floor(Math.random() * visual.length)])();
 
   if (!event) {
     return null;
@@ -84,7 +85,11 @@ const EventBox = ({ event }) => {
         <PlaceIcon className={classes.redPlace} />
         <Typography>{event?.address?.formattedAddress}</Typography>
       </box>
-      <DetailButton className={classes.rvsp} href={`https://talkbase.io/${event.url}`} text="Chytit místo na akci" />
+      <DetailButton
+        className={classes.rvsp}
+        href={`https://talkbase.io/${event.url}`}
+        text={past ? 'Zobrazit akci' : 'Chytit místo na akci'}
+      />
     </Box>
   );
 };
