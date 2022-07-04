@@ -69,22 +69,22 @@ const EventBox = ({ event, past }) => {
       <Typography variant="h4" className={classes.eventName}>
         {event.title}
       </Typography>
-      <box className={classes.timeAndDateWrapper}>
-        <box className={classes.iconWithText}>
+      <Box className={classes.timeAndDateWrapper}>
+        <Box className={classes.iconWithText}>
           <CalendarIcon />
           <Typography>{dayjs(event.startTime).format('DD.MM.YY')}</Typography>
-        </box>
-        <box className={classes.iconWithText}>
+        </Box>
+        <Box className={classes.iconWithText}>
           <TimeIcon />
           <Typography>
             {dayjs(event.startTime).format('HH:mm')}- {dayjs(event.endTime).format('HH:mm')}
           </Typography>
-        </box>
-      </box>
-      <box className={classNames(classes.locationWrapper, classes.iconWithText)}>
+        </Box>
+      </Box>
+      <Box className={classNames(classes.locationWrapper, classes.iconWithText)}>
         <PlaceIcon className={classes.redPlace} />
         <Typography>{event?.address?.formattedAddress}</Typography>
-      </box>
+      </Box>
       <DetailButton
         className={classes.rvsp}
         href={`https://talkbase.io${event.url}`}
