@@ -63,6 +63,11 @@ export const AppHeader = () => {
               </NextLink>
             </MenuItem>
             <MenuItem>
+              <NextLink href="/events" onClick={handleMenuClose}>
+                Události
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
               <NextLink href="/about" onClick={handleMenuClose}>
                 O nás
               </NextLink>

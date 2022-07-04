@@ -16,11 +16,13 @@ const Events = ({ pastEvents, upcomingEvents }) => {
   const [events, setEvents] = useState({ pastEvents, upcomingEvents });
 
   useEffect(() => {
+    //debugger;
     const fetchAsyncWrapper = async () => {
+      //debugger;
       setEvents(await fetchEvents());
     };
     fetchAsyncWrapper();
-  }, [setEvents, fetchEvents]);
+  }, [setEvents]);
 
   return (
     <Box m={4} className={classes.root}>
@@ -45,11 +47,5 @@ const fetchEvents = async () => {
 
   return { pastEvents, upcomingEvents };
 };
-
-export async function getStaticProps() {
-  return {
-    props: await fetchEvents(),
-  };
-}
 
 export default Events;
