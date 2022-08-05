@@ -14,9 +14,9 @@ import { logoVariant } from '../components/common/ChapterLogo/ChapterLogo';
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     '& > *': {
-      margin: spacing(10, 0),
+      margin: spacing(10, 'auto'),
       [breakpoints.down('sm')]: {
-        margin: spacing(5, 0),
+        margin: spacing(5, 'auto'),
       },
     },
   },
@@ -45,8 +45,6 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     },
   },
   sectionDark: {
-    //todo - low priority
-    //backgroundColor: '#efefef',
     width: '100%',
   },
   sectionMargin: {},
