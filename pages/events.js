@@ -10,15 +10,13 @@ const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-const Events = ({ pastEvents, upcomingEvents }) => {
+const Events = () => {
   const classes = useStyles();
 
-  const [events, setEvents] = useState({ pastEvents, upcomingEvents });
+  const [events, setEvents] = useState({ pastEvents: [], upcomingEvents: [] });
 
   useEffect(() => {
-    //debugger;
     const fetchAsyncWrapper = async () => {
-      //debugger;
       setEvents(await fetchEvents());
     };
     fetchAsyncWrapper();
@@ -29,7 +27,7 @@ const Events = ({ pastEvents, upcomingEvents }) => {
       <EventsHeadline />
       <h1>Již brzy</h1>
       {isEmpty(events.upcomingEvents) && <img src={'/images/gugtravolta.gif'} />}
-      <EventsListBox events={upcomingEvents} />
+      <EventsListBox events={events.upcomingEvents} />
       <h1>Proběhlé události</h1>
       <EventsListBox events={events.pastEvents} past />
     </Box>
@@ -37,14 +35,13 @@ const Events = ({ pastEvents, upcomingEvents }) => {
 };
 
 Events.propTypes = {
-  events: EventsPropTypes,
+  pastEvents: EventsPropTypes,
+  upcomingEvents: EventsPropTypes,
 };
 const fetchEvents = async () => {
   const talkBaseUrl = 'https://public.talkbase.io/api/workspace/gugcz/event?limit=3&offset=0&state=';
-
   const pastEvents = await (await fetch(`${talkBaseUrl}PAST`)).json();
   const upcomingEvents = await (await fetch(`${talkBaseUrl}UPCOMING`)).json();
-
   return { pastEvents, upcomingEvents };
 };
 
