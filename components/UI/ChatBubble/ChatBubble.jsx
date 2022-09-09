@@ -12,7 +12,7 @@ const useStyles = makeStyles(({}) => ({
   bottomRight: { borderBottomRightRadius: 0 },
 }));
 
-const ChatBubble = ({ size, variant, direction = 'topLeft', position = direction, icon }) => {
+const ChatBubble = ({ size, variant, direction = 'topLeft', position = direction, icon, className }) => {
   const classes = useStyles();
 
   return (
@@ -21,7 +21,7 @@ const ChatBubble = ({ size, variant, direction = 'topLeft', position = direction
       size={size}
       variant={variant}
       position={position}
-      className={classNames(classes.root, classes[direction])}
+      className={classNames(classes.root, classes[direction], className)}
     />
   );
 };

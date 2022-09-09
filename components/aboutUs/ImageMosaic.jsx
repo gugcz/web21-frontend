@@ -7,20 +7,19 @@ import { logoVariant } from '../common/ChapterLogo/ChapterLogo';
 import ChatBubble from '../UI/ChatBubble/ChatBubble';
 import Circle from '../UI/Circle/Circle';
 
-const useStyles = makeStyles(({}) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'grid',
     gridTemplateColumns: 'repeat(4, 1fr)',
-    gridTemplateRows: 'repeat(6, 1fr)',
-    gridGap: 32,
+    gridTemplateRows: 'repeat(4, 1fr)',
+    gridGap: '5%',
     aspectRatio: 1,
-    maxWidth: '80%',
     margin: '0 auto',
     '& > *:nth-child(1)': {
       gridColumnStart: 1,
       gridColumnEnd: 3,
       gridRowStart: 1,
-      gridRowEnd: 4,
+      gridRowEnd: 3,
     },
     '& > *:nth-child(2)': {
       gridColumnStart: 3,
@@ -49,31 +48,50 @@ const useStyles = makeStyles(({}) => ({
     objectFit: 'cover',
     aspectRatio: 4 / 5,
   },
+  floatingBubble: {
+    position: 'relative',
+    '&>*': {
+      position: 'absolute',
+    },
+  },
+  blueBubble: {
+    bottom: 0,
+    left: 0,
+  },
+  redBubble: {
+    right: 0,
+    bottom: -20,
+  },
 }));
-
-// todo - make mosaic more configurable
-// allow to change pictures
-// create simple components for every photo
-
-// Todo - Next step:
-// - max width for mobiles
-// - change images from Lida!
 
 const ImageMosaic = () => {
   const classes = useStyles();
 
   return (
-    <>
-      <Box className={classes.root}>
-        <img src="/images/dev/eventBox.png" alt="random alt text" className={classes.bubbleShape} />
-        <img src="/images/dev/eventBox.png" alt="random alt text" className={classes.penguinShape} />
-        <ChatBubble size={'M'} variant={logoVariant.GDG} direction="bottomLeft" icon={GroupsIcon} />
-        <Circle size={'S'} variant={logoVariant.GBG} position="bottomLeft" icon={GroupsIcon} />
-        <Circle size={'S'} variant={logoVariant.GEG} position="topRight" />
-        <ChatBubble size={'M'} variant={logoVariant.GXG} direction="bottomRight" icon={MoreHorizIcon} />
+    <Box className={classes.root}>
+      <img src="/images/about/mosaic01.jpg" alt="random alt text" className={classes.bubbleShape} />
+      <img src="/images/about/mosaic02.jpg" alt="random alt text" className={classes.penguinShape} />
+      <Box className={classes.floatingBubble}>
+        <ChatBubble
+          className={classes.blueBubble}
+          size={'L'}
+          variant={logoVariant.GDG}
+          direction="bottomLeft"
+          icon={GroupsIcon}
+        />
       </Box>
-      <img src="/images/hp/mosaic.png" alt="Photo mosaic" className={classes.img} />
-    </>
+      <Circle size={'S'} variant={logoVariant.GBG} position="bottomLeft" />
+      <Circle size={'S'} variant={logoVariant.GEG} position="topRight" />
+      <Box className={classes.floatingBubble}>
+        <ChatBubble
+          className={classes.redBubble}
+          size={'L'}
+          variant={logoVariant.GXG}
+          direction="bottomRight"
+          icon={MoreHorizIcon}
+        />
+      </Box>
+    </Box>
   );
 };
 
