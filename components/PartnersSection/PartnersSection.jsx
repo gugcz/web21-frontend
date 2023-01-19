@@ -18,8 +18,14 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     display: 'flex',
     justifyContent: 'space-evenly',
     maxHeight: 80,
+    width: '100%',
     '&>*': {
-      objectFit: 'none',
+      maxWidth: '50%',
+      display: 'flex',
+      justifyContent: 'space-evenly',
+      '&>*': {
+        objectFit: 'contain',
+      },
     },
     [breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -47,8 +53,12 @@ export const PartnersSection = () => {
     <Box className={classes.root}>
       <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
       <Box className={classes.gold}>
-        <img src={'/images/partners/GWG_Logo.png'} alt="Grow with google" />
-        <img src={'/images/partners/revolgy_Logo.svg'} alt="Partneři Gugu" />
+        <a href="">
+          <img src={'/images/partners/Google_logo_Horizontal_Grey_RGB.png'} alt="Grow with google" />
+        </a>
+        <a href="">
+          <img src={'/images/partners/SmartEmailing_logo_RGB_SmartEmailing_Color.png'} alt="Partneři Gugu" />
+        </a>
       </Box>
       <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
         Stát se partnerem

@@ -4,6 +4,7 @@ import React from 'react';
 import { CalendarToday as CalendarIcon, Place as PlaceIcon, Schedule as TimeIcon } from '@material-ui/icons';
 import dayjs from 'dayjs';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import DetailButton from '../../common/DetailButton/DetailButton';
 import { TalkBaseEventPropType } from '../../../model/events.model';
 
@@ -96,6 +97,7 @@ const EventBox = ({ event, past }) => {
 
 EventBox.propTypes = {
   event: TalkBaseEventPropType,
+  past: PropTypes.bool,
 };
 
 export default EventBox;

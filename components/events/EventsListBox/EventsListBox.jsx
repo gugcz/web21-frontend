@@ -47,6 +47,7 @@ const EventsListBox = ({ events, title, past = false }) => {
 EventsListBox.propTypes = {
   events: EventsPropTypes,
   title: PropTypes.string,
+  past: PropTypes.bool,
 };
 
 export default EventsListBox;
