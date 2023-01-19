@@ -53,10 +53,10 @@ export const PartnersSection = () => {
     <Box className={classes.root}>
       <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
       <Box className={classes.gold}>
-        <a href="">
+        <a href="https://grow.google/intl/cz/">
           <img src={'/images/partners/Google_logo_Horizontal_Grey_RGB.png'} alt="Grow with google" />
         </a>
-        <a href="">
+        <a href="https://www.smartemailing.cz/">
           <img src={'/images/partners/SmartEmailing_logo_RGB_SmartEmailing_Color.png'} alt="Partneři Gugu" />
         </a>
       </Box>
