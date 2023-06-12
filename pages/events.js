@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import { isEmpty } from 'ramda';
 import EventsHeadline from '../components/events/EventsHeadline/EventsHeadline';
 import EventsListBox from '../components/events/EventsListBox/EventsListBox';
@@ -27,11 +27,10 @@ const Events = () => {
       <EventsHeadline />
       <h1>Již brzy</h1>
       {isEmpty(events.upcomingEvents) && <img src={'/images/gugtravolta.gif'} />}
-      <iframe
-        id="talkbase-embed-event-list"
-        src="https://talkbase.io/company/gugcz/event-list?limit=6"
-        frameBorder="0"></iframe>
       <EventsListBox events={events.upcomingEvents} />
+      <h1>Proběhlé události</h1>
+      <EventsListBox events={events.pastEvents} past />
+      <Button href={'https://talkbase.io/company/gugcz/events'}>Zobrazit všechny události</Button>
     </Box>
   );
 };
@@ -41,8 +40,7 @@ Events.propTypes = {
   upcomingEvents: EventsPropTypes,
 };
 const fetchEvents = async () => {
-  const talkBaseUrl =
-    'https://api.talkbase.io/api/workspace/858f792f-9e5b-4caf-b85b-a9791095b054/event?limit=6&offset=0&state=';
+  const talkBaseUrl = 'https://api.talkbase.io/api/workspace-public/gugcz/event?limit=6&offset=0&state=';
   const pastEvents = await (await fetch(`${talkBaseUrl}PAST`)).json();
   const upcomingEvents = await (await fetch(`${talkBaseUrl}UPCOMING`)).json();
   return { pastEvents, upcomingEvents };
