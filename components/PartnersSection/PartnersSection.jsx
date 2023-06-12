@@ -29,12 +29,12 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     },
     [breakpoints.down('sm')]: {
       flexDirection: 'column',
-      maxWidth: '80vw',
       maxHeight: 'initial',
       margin: spacing(4, 0),
       '&>*': {
         objectFit: 'contain',
         height: 80,
+        maxWidth: '100%',
       },
     },
   },
@@ -42,6 +42,11 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     marginTop: spacing(5),
     [breakpoints.down('sm')]: {
       margin: 0,
+    },
+  },
+  image: {
+    [breakpoints.down('sm')]: {
+      width: '100%',
     },
   },
 }));
@@ -54,10 +59,21 @@ export const PartnersSection = () => {
       <InfoText icon={<PartnersIcon size={80} />} title="Partneři" />
       <Box className={classes.gold}>
         <a href="https://grow.google/intl/cz/">
-          <img src={'/images/partners/Google_logo_Horizontal_Grey_RGB.png'} alt="Grow with google" />
+          <img
+            src={'/images/partners/Google_logo_Horizontal_Grey_RGB.png'}
+            alt="Grow with google"
+            className={classes.image}
+          />
         </a>
         <a href="https://www.smartemailing.cz/">
-          <img src={'/images/partners/SmartEmailing_logo_RGB_SmartEmailing_Color.png'} alt="Partneři Gugu" />
+          <img
+            src={'/images/partners/SmartEmailing_logo_RGB_SmartEmailing_Color.png'}
+            alt="Partneři Gugu"
+            className={classes.image}
+          />
+        </a>
+        <a href="https://www.smartemailing.cz/">
+          <img src={'/images/partners/dotekomanie.png'} alt="Partneři Gugu" className={classes.image} />
         </a>
       </Box>
       <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
