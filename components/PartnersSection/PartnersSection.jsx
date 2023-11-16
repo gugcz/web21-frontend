@@ -68,12 +68,12 @@ export const PartnersSection = () => {
         <a href="https://www.smartemailing.cz/">
           <img
             src={'/images/partners/SmartEmailing_logo_RGB_SmartEmailing_Color.png'}
-            alt="Partneři Gugu"
+            alt="SmartEmailing"
             className={classes.image}
           />
         </a>
-        <a href="https://www.smartemailing.cz/">
-          <img src={'/images/partners/dotekomanie.png'} alt="Partneři Gugu" className={classes.image} />
+        <a href="https://www.dotekomanie.cz/">
+          <img src={'/images/partners/dotekomanie.png'} alt="Dotekománie" className={classes.image} />
         </a>
       </Box>
       <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
