@@ -16,8 +16,9 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   },
   gold: {
     display: 'flex',
-    justifyContent: 'space-evenly',
-    maxHeight: 80,
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    maxWidth: 700,
     width: '100%',
     '&>*': {
       maxWidth: '50%',
@@ -25,6 +26,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
       justifyContent: 'space-evenly',
       '&>*': {
         objectFit: 'contain',
+        maxWidth: '100%',
       },
     },
     [breakpoints.down('sm')]: {
@@ -74,6 +76,9 @@ export const PartnersSection = () => {
         </a>
         <a href="https://www.dotekomanie.cz/">
           <img src={'/images/partners/dotekomanie.png'} alt="Dotekománie" className={classes.image} />
+        </a>
+        <a href="https://edu.google.com/">
+          <img src={'/images/partners/googleedu.png'} alt="Google For Education" className={classes.image} />
         </a>
       </Box>
       <Button variant={'contained'} color={'primary'} className={classes.action} href="mailto:filip@gug.cz">
