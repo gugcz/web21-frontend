@@ -3,15 +3,16 @@
     "default": "gug-web-2023"
   },
   "targets": {
-    "gug-web": {
+    "gug-web-2023": {
       "hosting": {
         "staging": [
-          "staging-gug"
+          "staging-gug-web"
         ],
-        "production":[
-          "public-gug"
+        "production": [
+          "gug-web-2023"
         ]
-        }
       }
     }
-  }
+  },
+  "etags": {}
+}
