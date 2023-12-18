@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "gug-web"
+    "default": "gug-web-2023"
   },
   "targets": {
     "gug-web": {
@@ -9,7 +9,7 @@
           "staging-gug"
         ],
         "production":[
-            "public-gug"
+          "public-gug"
         ]
         }
       }
