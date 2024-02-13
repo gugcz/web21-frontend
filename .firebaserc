@@ -10,9 +10,11 @@
         ],
         "production": [
           "gug-web-2023"
+        ],
+        "pomoc": [
+          "pomoc-gug-2023"
         ]
       }
     }
-  },
-  "etags": {}
+  }
 }

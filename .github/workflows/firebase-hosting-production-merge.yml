@@ -23,3 +23,17 @@ jobs:
           projectId: gug-web-2023
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+
+  deploy-pomoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GUG_WEB_2023 }}'
+          channelId: live
+          target: pomoc
+          projectId: gug-web-2023
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
