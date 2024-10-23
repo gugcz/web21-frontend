@@ -115,7 +115,7 @@ const Home = ({ data, events }) => {
 
       {/* todo - add later <Box>Komunita</Box> */}
       <NewsletterForm />
-      <PartnersSection />
+      <PartnersSection partners={data.partners} />
     </Box>
   );
 };
@@ -124,6 +124,7 @@ Home.propTypes = {
   data: PropTypes.exact({
     stats: PropTypes.object,
     groups: PropTypes.object,
+    partners: PropTypes.array,
   }),
   events: EventsPropTypes,
 };
