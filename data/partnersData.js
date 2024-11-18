@@ -22,7 +22,7 @@ const partners = [
   {
     name: 'MSD',
     image: '/images/partners/msd.webp',
-    link: 'https://www.msd.cz/en/genai-2024"',
+    link: 'https://www.msd.cz/en/careers/',
   },
 ];
 
